@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Grok Bot 完整使用指南（2026 图文版）</title>
+<meta name="description" content="Grok Bot 完整使用指南：安装、订阅、Skill、Routine、审批与排错。"/>
+<meta property="og:title" content="Grok Bot 完整使用指南（2026 图文版）"/>
+<meta property="og:description" content="从开通到定时自动化的完整图文教程"/>
+<meta property="og:image" content="assets/cover.png"/>
+<style>
+:root{
+  --bg:#070b16; --bg2:#0d1424; --card:#121a2e; --line:#1e2a44;
+  --text:#e8eefc; --muted:#93a0bd; --blue:#3b82f6; --cyan:#22d3ee; --amber:#f59e0b;
+  --radius:16px; --max:1120px; --side:280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family: ui-sans-serif, system-ui, -apple-system, "PingFang SC", "Noto Sans SC", "Segoe UI", sans-serif;
+  background: radial-gradient(1200px 600px at 10% -10%, #132044 0%, transparent 55%),
+              radial-gradient(900px 500px at 100% 0%, #1a1430 0%, transparent 50%),
+              var(--bg);
+  color:var(--text); line-height:1.75; font-size:16.5px;
+}
+a{color:#7dd3fc; text-decoration:none}
+a:hover{color:#fff; text-decoration:underline}
+.wrap{max-width:calc(var(--max) + var(--side) + 48px); margin:0 auto; padding:24px 20px 80px; display:grid; grid-template-columns:var(--side) 1fr; gap:28px}
+@media (max-width:960px){.wrap{grid-template-columns:1fr} .toc{position:static!important; max-height:none}}
+.hero{
+  grid-column:1/-1; border:1px solid var(--line); border-radius:24px; overflow:hidden;
+  background:linear-gradient(180deg, #111827, #0b1220); box-shadow:0 20px 60px rgba(0,0,0,.35);
+}
+.hero img{display:block; width:100%; height:auto; max-height:420px; object-fit:cover}
+.hero-meta{padding:22px 26px 26px}
+.hero-meta .eyebrow{color:var(--cyan); font-size:13px; letter-spacing:.08em; text-transform:uppercase; font-weight:700}
+.hero-meta h1{margin:8px 0 10px; font-size:clamp(1.6rem, 3vw, 2.35rem); line-height:1.25}
+.hero-meta p{margin:0; color:var(--muted); max-width:70ch}
+.cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px;
+  border:1px solid var(--line); background:rgba(59,130,246,.15); color:#fff; font-weight:600; font-size:14px
+}
+.btn.primary{background:linear-gradient(90deg, var(--blue), #6366f1); border-color:transparent}
+.btn:hover{text-decoration:none; filter:brightness(1.08)}
+.toc{
+  position:sticky; top:18px; align-self:start; max-height:calc(100vh - 36px); overflow:auto;
+  background:rgba(13,20,36,.85); backdrop-filter:blur(10px); border:1px solid var(--line);
+  border-radius:var(--radius); padding:16px 14px 18px;
+}
+.toc-title{font-size:12px; color:var(--amber); letter-spacing:.06em; font-weight:700; margin:0 0 10px}
+.toc ul{list-style:none; margin:0; padding:0}
+.toc li{margin:0}
+.toc a{display:block; padding:6px 10px; border-radius:8px; color:var(--muted); font-size:13.5px; line-height:1.4}
+.toc a:hover,.toc a:focus{background:rgba(59,130,246,.12); color:#fff; text-decoration:none}
+.toc > ul > li > a{color:#c9d4ef; font-weight:600}
+.toc ul ul{padding-left:12px; margin:2px 0 8px}
+.content{
+  background:rgba(18,26,46,.72); border:1px solid var(--line); border-radius:var(--radius);
+  padding:28px 28px 40px; min-width:0;
+}
+.content > h1:first-child{display:none}
+.content h1,.content h2,.content h3{scroll-margin-top:24px; line-height:1.3}
+.content h2{margin-top:2.2em; padding-bottom:.35em; border-bottom:1px solid var(--line); font-size:1.45rem}
+.content h3{margin-top:1.6em; color:#dbe7ff; font-size:1.12rem}
+.content p,.content li{color:#d5deed}
+.content blockquote{
+  margin:1.2em 0; padding:12px 16px; border-left:3px solid var(--amber);
+  background:rgba(245,158,11,.08); border-radius:0 12px 12px 0; color:#f3e8c8
+}
+.content table{width:100%; border-collapse:collapse; margin:1.2em 0; font-size:14.5px; overflow:auto; display:block}
+.content th,.content td{border:1px solid var(--line); padding:10px 12px; text-align:left}
+.content th{background:rgba(59,130,246,.12); color:#fff}
+.content tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.content img{max-width:100%; height:auto; border-radius:12px; border:1px solid var(--line); margin:12px 0; background:#000}
+.content code{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.9em;
+  background:rgba(34,211,238,.1); padding:.15em .4em; border-radius:6px; color:#a5f3fc}
+.content pre{background:#060914; border:1px solid var(--line); border-radius:12px; padding:14px 16px; overflow:auto}
+.content pre code{background:none; padding:0; color:#e2e8f0}
+.content hr{border:0; border-top:1px solid var(--line); margin:2em 0}
+.footer{grid-column:1/-1; text-align:center; color:var(--muted); font-size:13px; padding-top:8px}
+.badge{display:inline-block; padding:3px 10px; border-radius:999px; background:rgba(34,211,238,.12); color:var(--cyan); font-size:12px; font-weight:700}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <img src="assets/cover.png" alt="Grok Bot 完整使用指南封面"/>
+    <div class="hero-meta">
+      <div class="eyebrow">GitHub Pages · 2026</div>
+      <h1>Grok Bot 完整使用指南 <span class="badge">图文版</span></h1>
+      <p>从订阅开通、安装登录，到 Skill / Routine / 审批安全与排错。适合想把 Grok Bot 用到「能定时交作业」的人。</p>
+      <div class="cta">
+        <a class="btn primary" href="#3-怎么订阅与开通">怎么订阅</a>
+        <a class="btn" href="#1-10-分钟上手">10 分钟上手</a>
+        <a class="btn" href="https://momoai.dadoudou117.com/buy/9" target="_blank" rel="noopener">人民币开通 CDK</a>
+        <a class="btn" href="https://github.com/xianyu110/grokbot" target="_blank" rel="noopener">GitHub 仓库</a>
+      </div>
+    </div>
+  </section>
+  <aside class="toc">
+    <p class="toc-title">目录</p>
+    <div class="toc">
+<ul>
+<li><a href="#30">先看结论（30 秒）</a></li>
+<li><a href="#_1">目录</a></li>
+<li><a href="#1-10">1. 10 分钟上手</a><ul>
+<li><a href="#step-1">Step 1 · 装好并登录</a></li>
+<li><a href="#step-2-bot">Step 2 · 只建一个窄职责 Bot</a></li>
+<li><a href="#step-3-5">Step 3 · 用 5 要素下一单真活</a></li>
+<li><a href="#step-4">Step 4 · 需要登录时接管电脑</a></li>
+<li><a href="#step-5-skill-routine">Step 5 · 跑通后再 Skill → Routine</a></li>
+</ul>
+</li>
+<li><a href="#2">2. 它是什么、和谁不一样</a><ul>
+<li><a href="#_2">和普通聊天助手差在哪</a></li>
+</ul>
+</li>
+<li><a href="#3">3. 怎么订阅与开通</a><ul>
+<li><a href="#31">3.1 官方路径（原厂）</a></li>
+<li><a href="#32">3.2 推荐购买通道（本教程对接）</a></li>
+</ul>
+</li>
+<li><a href="#4">4. 资格、平台与隐私</a><ul>
+<li><a href="#_5">资格（会变，以账号为准）</a></li>
+<li><a href="#_6">平台</a></li>
+<li><a href="#_7">隐私硬门槛</a></li>
+</ul>
+</li>
+<li><a href="#5">5. 安装与登录</a><ul>
+<li><a href="#_8">下载</a></li>
+<li><a href="#_9">登录</a></li>
+<li><a href="#_10">两类更新（别搞混）</a></li>
+</ul>
+</li>
+<li><a href="#6">6. 核心概念</a></li>
+<li><a href="#7-bot-profile">7. 创建 Bot 与写好 Profile</a><ul>
+<li><a href="#_11">何时新建</a></li>
+<li><a href="#_12">创建步骤</a></li>
+<li><a href="#profile-vs">Profile vs 消息</a></li>
+<li><a href="#_13">固定 / 隐藏 / 复制 / 删除</a></li>
+</ul>
+</li>
+<li><a href="#8">8. 怎么下任务</a><ul>
+<li><a href="#_14">五要素（官方建议）</a></li>
+<li><a href="#_15">五分钟练习（无需登录）</a></li>
+<li><a href="#_16">需要登录仪表盘时</a></li>
+<li><a href="#_17">六级用法心法</a></li>
+</ul>
+</li>
+<li><a href="#9">9. 云端电脑与本机电脑</a><ul>
+<li><a href="#_18">共享规则（安全关键）</a></li>
+<li><a href="#_19">观看与接管</a></li>
+<li><a href="#_20">工作区</a></li>
+<li><a href="#_21">本机电脑</a></li>
+</ul>
+</li>
+<li><a href="#10-plugins">10. Plugins / 连接器</a></li>
+<li><a href="#11">11. 文件与交付物</a><ul>
+<li><a href="#_22">附件（桌面）</a></li>
+<li><a href="#_23">可审查结果</a></li>
+</ul>
+</li>
+<li><a href="#12-skill-teach-routine">12. Skill · Teach · Routine</a><ul>
+<li><a href="#skill-vs-routine">Skill vs Routine</a></li>
+<li><a href="#skill-6">好 Skill 写清 6 件事</a></li>
+<li><a href="#teach-a-task">Teach a task</a></li>
+<li><a href="#routine">Routine</a></li>
+</ul>
+</li>
+<li><a href="#13">13. 审批与安全</a><ul>
+<li><a href="#_24">在请求里设边界</a></li>
+<li><a href="#auto-review">Auto Review</a></li>
+<li><a href="#_25">回收权限</a></li>
+</ul>
+</li>
+<li><a href="#14-bot">14. 多 Bot、群聊与分享</a><ul>
+<li><a href="#_26">组队</a></li>
+<li><a href="#_27">分享</a></li>
+</ul>
+</li>
+<li><a href="#15-prompt">15. 场景 Prompt 模板</a><ul>
+<li><a href="#bot-7">固化成 Bot 的 7 步</a></li>
+<li><a href="#_28">可直接用的中文开场</a></li>
+</ul>
+</li>
+<li><a href="#16">16. 界面速查与排错</a><ul>
+<li><a href="#_29">常用入口</a></li>
+<li><a href="#_30">排错（先做破坏性最小的）</a></li>
+</ul>
+</li>
+<li><a href="#17-faq">17. FAQ</a></li>
+<li><a href="#18">18. 附录：来源与图床链接</a><ul>
+<li><a href="#_31">官方</a></li>
+<li><a href="#_32">社区精选</a></li>
+<li><a href="#_33">图床链接清单</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+  </aside>
+  <article class="content">
+    <h1 id="grok-bot-2026">Grok Bot 完整使用指南（2026 图文版）</h1>
+<blockquote>
+<p>更新日期：2026-09-07<br />
+适用：想从 0 把 Grok Bot 用到「能定时交作业」的人<br />
+依据优先：<a href="https://docs.x.ai/grok-bot/overview">官方文档 docs.x.ai/grok-bot</a>；资格与价格以 <a href="https://x.ai/bot">x.ai/bot</a> / App 内账单为准<br />
+截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；已托管于 <code>upload.maynor1024.live</code></p>
+</blockquote>
+<hr />
+<p><img alt="封面" src="https://upload.maynor1024.live/file/grok-bot-guide-cover-2026.png" /></p>
+<hr />
+<h2 id="30">先看结论（30 秒）</h2>
+<p><strong>Grok Bot ≠ grok.com 聊天，也 ≠ Grok Build。</strong><br />
+它是一支跑在<strong>云端电脑</strong>上的 AI 同事：能登录网站、点界面、写文件、定时干活；你合上笔记本，它还在跑。</p>
+<table>
+<thead>
+<tr>
+<th>产品</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Grok 聊天</td>
+<td>问答与生成</td>
+</tr>
+<tr>
+<td>Grok Build</td>
+<td>写代码的 CLI / coding agent</td>
+</tr>
+<tr>
+<td><strong>Grok Bot</strong></td>
+<td><strong>有电脑的 AI 同事</strong>：登录、操作、定时、协作</td>
+</tr>
+</tbody>
+</table>
+<p><strong>还没开通？</strong> 人民币下单见 <a href="#3-怎么订阅与开通">第 3 章 · 怎么订阅与开通</a>（购买页：https://momoai.dadoudou117.com/buy/9 ，SuperGrok 1 月 CDK）。</p>
+<p><strong>最稳的用法只有一条链：</strong></p>
+<pre><code class="language-text">窄职责 Bot → 手动跑通一次 → 存成 Skill → Test run → 再开 Routine
+</code></pre>
+<p>外发、付款、删数据、改生产：<strong>永远放在审批后面。</strong><br />
+多 Bot <strong>不是</strong>安全隔离——它们共用一台云电脑的登录与文件。</p>
+<hr />
+<h2 id="_1">目录</h2>
+<ol>
+<li><a href="#1-10-分钟上手">10 分钟上手</a></li>
+<li><a href="#2-它是什么和谁不一样">它是什么、和谁不一样</a></li>
+<li><a href="#3-怎么订阅与开通">怎么订阅与开通</a></li>
+<li><a href="#4-资格平台与隐私">资格、平台与隐私</a></li>
+<li><a href="#5-安装与登录">安装与登录</a></li>
+<li><a href="#6-核心概念">核心概念</a></li>
+<li><a href="#7-创建-bot-与写好-profile">创建 Bot 与写好 Profile</a></li>
+<li><a href="#8-怎么下任务">怎么下任务</a></li>
+<li><a href="#9-云端电脑与本机电脑">云端电脑与本机电脑</a></li>
+<li><a href="#10-plugins--连接器">Plugins / 连接器</a></li>
+<li><a href="#11-文件与交付物">文件与交付物</a></li>
+<li><a href="#12-skill--teach--routine">Skill · Teach · Routine</a></li>
+<li><a href="#13-审批与安全">审批与安全</a></li>
+<li><a href="#14-多-bot群聊与分享">多 Bot、群聊与分享</a></li>
+<li><a href="#15-场景-prompt-模板">场景 Prompt 模板</a></li>
+<li><a href="#16-界面速查与排错">界面速查与排错</a></li>
+<li><a href="#17-faq">FAQ</a></li>
+<li><a href="#18-附录来源与图床链接">附录：来源与图床链接</a></li>
+</ol>
+<hr />
+<hr />
+<h2 id="1-10">1. 10 分钟上手</h2>
+<p>按这个顺序做，比先读完所有概念更有用。</p>
+<h3 id="step-1">Step 1 · 装好并登录</h3>
+<p>从 <a href="https://x.ai/bot">x.ai/bot</a> 下载桌面端（macOS / Windows / Linux），用 <strong>Cursor 账号</strong>登录。组织账号走 SSO。</p>
+<p><img alt="产品页" src="https://upload.maynor1024.live/file/flavio-product-page.jpg" /></p>
+<p><em>产品 / 下载入口</em></p>
+<p><img alt="登录" src="https://upload.maynor1024.live/file/flavio-sign-in-screen.jpg" /></p>
+<p><em>首屏：Sign in with Cursor</em></p>
+<p><img alt="授权" src="https://upload.maynor1024.live/file/flavio-account-authorization.jpg" /></p>
+<p><em>浏览器里确认授权的那个账号</em></p>
+<p>macOS：打开 dmg，拖进 Applications。</p>
+<p><img alt="安装" src="https://upload.maynor1024.live/file/flavio-macos-installer.jpg" /></p>
+<h3 id="step-2-bot">Step 2 · 只建一个窄职责 Bot</h3>
+<p><code>New</code> 或 <code>Cmd/Ctrl+N</code> → <strong>Create new agent</strong> → 改 Profile。</p>
+<ul>
+<li><strong>Name</strong>：方便辨认即可  </li>
+<li><strong>Title</strong>：一句话岗位  </li>
+<li><strong>Description</strong>：写清结果、来源、禁止事项、审批边界  </li>
+</ul>
+<p><img alt="创建 Bot" src="https://upload.maynor1024.live/file/flavio-create-first-bot.jpg" /></p>
+<p><img alt="Profile" src="https://upload.maynor1024.live/file/flavio-blog-pulse-role.jpg" /></p>
+<p><em>把「怎么干」写进描述，把「本周干什么」留给消息</em></p>
+<h3 id="step-3-5">Step 3 · 用 5 要素下一单真活</h3>
+<ol>
+<li>Outcome：完成什么  </li>
+<li>Sources：用哪些 App / 网站 / 文件  </li>
+<li>Constraints：不能做什么  </li>
+<li>Deliverable：交什么格式  </li>
+<li>Review point：停在哪等你  </li>
+</ol>
+<p>先要<strong>草稿 / 审查清单</strong>，不要一上来就让它外发。</p>
+<p><img alt="首次跑通" src="https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg" /></p>
+<h3 id="step-4">Step 4 · 需要登录时接管电脑</h3>
+<p>对话里打开 <strong>Agent Computer</strong> → Takeover → 自己完成密码 / 2FA / CAPTCHA → 交还控制。<br />
+<strong>密码不要贴进聊天。</strong></p>
+<p><img alt="Agent Computer" src="https://upload.maynor1024.live/file/11-datacamp-agent-computer.png" /></p>
+<p><em>Agent Computer：看它在点什么、卡在哪</em></p>
+<h3 id="step-5-skill-routine">Step 5 · 跑通后再 Skill → Routine</h3>
+<p>手动结果满意 → 让它存 Skill → <code>/</code> 再测一次 → 建 Routine → <strong>先 Test run 盯完整场</strong> → 再启用定时。</p>
+<p><img alt="Plugins" src="https://upload.maynor1024.live/file/flavio-plugins.jpg" /></p>
+<p><em>有插件就优先连插件</em></p>
+<p><img alt="Routine" src="https://upload.maynor1024.live/file/flavio-daily-routine.jpg" /></p>
+<p><em>Routine：日程、指令、Test run、历史</em></p>
+<p><img alt="交付" src="https://upload.maynor1024.live/file/flavio-blog-pulse-morning-report.jpg" /></p>
+<p><em>好交付物：结构化、带源链接、查不到就明说</em></p>
+<hr />
+<h2 id="2">2. 它是什么、和谁不一样</h2>
+<p>官方定位：Bot 像你一样登录并使用工具；在持久云端电脑上把活干完；只在需要判断或审批时回来找你。</p>
+<h3 id="_2">和普通聊天助手差在哪</h3>
+<ol>
+<li><strong>有云端电脑</strong>（浏览器、文件、终端）  </li>
+<li><strong>关本机也继续跑</strong>  </li>
+<li><strong>命名 Bot 有持久角色与记忆</strong>  </li>
+<li><strong>Connector / 浏览器双通道</strong>  </li>
+<li><strong>Skill + Routine</strong> 把流程固化  </li>
+<li><strong>多 Bot 可并行交接</strong>（仍共用一台电脑）</li>
+</ol>
+<p><img alt="桌面界面" src="https://upload.maynor1024.live/file/10-datacamp-app.png" /></p>
+<p><em>桌面端对话界面示例（DataCamp 教程截图）</em></p>
+<hr />
+<h2 id="3">3. 怎么订阅与开通</h2>
+<p>Grok Bot 本身挂在 <strong>Cursor / SuperGrok</strong> 资格上。国内常见有两条路：官方原价订阅，或第三方 CDK 充值通道。下面两条都写清楚，按你的情况选。</p>
+<h3 id="31">3.1 官方路径（原厂）</h3>
+<ol>
+<li>打开 <a href="https://x.ai/bot">x.ai/bot</a> 或 Cursor / SuperGrok 定价页  </li>
+<li>订阅符合资格的套餐（FAQ 常见：SuperGrok Plus / Heavy、Cursor Pro+ / Ultra、Teams 等；具体以页面为准）  </li>
+<li>用该 Cursor 账号登录 Grok Bot 桌面 / 手机 App  </li>
+<li>在 App 内 <strong>Usage &amp; Billing</strong> 确认已开通、周额度是否到账  </li>
+</ol>
+<p>适合：有外卡、能直连官方支付、希望账号完全自有。</p>
+<h3 id="32">3.2 推荐购买通道（本教程对接）</h3>
+<p>人民币下单走本教程对接页：</p>
+<p><strong>购买链接：<a href="https://momoai.dadoudou117.com/buy/9">https://momoai.dadoudou117.com/buy/9</a></strong></p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>页面信息（2026-09-07）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>商品名</td>
+<td>【正规实付】SuperGrok <strong>1 个月</strong> CDK（含同时长 <strong>X Premium+</strong>）</td>
+</tr>
+<tr>
+<td>标价</td>
+<td><strong>￥349.00</strong></td>
+</tr>
+<tr>
+<td>发货</td>
+<td>自动发货（卡密 / CDK）</td>
+</tr>
+<tr>
+<td>支付</td>
+<td>易支付 · 微信</td>
+</tr>
+<tr>
+<td>质保</td>
+<td>30 天（见商品说明边界）</td>
+</tr>
+<tr>
+<td>查单</td>
+<td><a href="https://momoai.dadoudou117.com/order-search">订单查询</a></td>
+</tr>
+</tbody>
+</table>
+<p>商品页要点（摘录）：</p>
+<ul>
+<li>宣称正规 iOS 实付订阅档（页面写约 50$/月），CDK 充值，<strong>无需上号</strong>，提供用户 <strong>ID / Token</strong> 即可  </li>
+<li><strong>含同时长 X Premium+</strong>（页面文案：X-Premium+ 赠送满血 Super Grok）  </li>
+<li>未使用卡密永久有效；有卡密可 24 小时自助充值  </li>
+<li>新号 / 老号都可充；可提前续费——<strong>覆盖剩余时长，不是累加</strong>（商品页强调三次）  </li>
+<li>虚拟商品使用后一般不可二次销售；售后范围以「CDK 无法使用」等卖家规则为准  </li>
+<li>常见封号风险提示：批量注册、账号共享、频繁换 IP、敏感内容等，欺诈 / 违规封号不质保  </li>
+<li>客服在线大约 9:00–4:00；充值失败可稍后重试，<strong>勿用多张卡密连续怼同一账号</strong>，先问客服  </li>
+</ul>
+<p><img alt="订阅页" src="https://upload.maynor1024.live/file/13-momoai-buy-9.png" /></p>
+<p><em>momoAI 购买页：SuperGrok 1 月 CDK · ￥349 · 微信下单</em></p>
+<h4 id="_3">下单步骤（照着点）</h4>
+<ol>
+<li>打开 https://momoai.dadoudou117.com/buy/9  </li>
+<li>确认标题含「SuperGrok1月 CDK」、价格为 <strong>￥349</strong>  </li>
+<li>填写<strong>常用邮箱</strong>（收货 / 查单）  </li>
+<li>购买数量一般填 <code>1</code>  </li>
+<li>输入图形验证码（可点图刷新）  </li>
+<li>支付方式选 <strong>易支付-微信</strong>  </li>
+<li>点 <strong>下单</strong>，完成微信支付  </li>
+<li>到邮箱或 <a href="https://momoai.dadoudou117.com/order-search">订单查询</a> 拿到 <strong>CDK / 卡密</strong>  </li>
+<li>按卖家说明：把账号 <strong>ID / Token</strong> 发给客服，或走页面「自助站点」充值  </li>
+<li>充值到账后，用该账号登录 Cursor / SuperGrok 体系，再打开 <strong>Grok Bot</strong> App  </li>
+</ol>
+<p>无货或未发货：先查单，保留支付截图，再联系客服（勿连刷多张卡密）。</p>
+<h4 id="grok-bot">开通后接到 Grok Bot</h4>
+<pre><code class="language-text">CDK 充值成功（SuperGrok + 页面所含 X Premium+）
+  → 确认官网会员状态已生效
+  → 安装 Grok Bot，Sign in with Cursor（同一账号体系）
+  → Usage &amp; Billing 确认额度
+  → 回到第 1 章「10 分钟上手」
+</code></pre>
+<h4 id="_4">购买前请知悉</h4>
+<ul>
+<li>这是<strong>第三方店铺</strong>，不是 x.ai / Cursor 官方收银台。  </li>
+<li>形态是 <strong>CDK 充值到你的账号</strong>，与「共享别人 SSO 上号」不同；但仍需遵守卖家规则与平台风控。  </li>
+<li><strong>覆盖续费、非累加</strong>：提前续费会覆盖时长，下单前算好到期节奏。  </li>
+<li>密钥 / CDK 不要发到公开群；只用可收信邮箱下单。  </li>
+</ul>
+<blockquote>
+<p>官方独享订阅适合要长期稳定、企业合规的人；要人民币快捷开 <strong>SuperGrok 月卡（含 X Premium+）</strong>，用上面链接，并仔细读商品页质保与封号说明。</p>
+</blockquote>
+<hr />
+<h2 id="4">4. 资格、平台与隐私</h2>
+<blockquote>
+<p>订阅下单步骤见上一章。本章补充官方名单、平台与隐私门槛。</p>
+</blockquote>
+<h3 id="_5">资格（会变，以账号为准）</h3>
+<p>官方 FAQ 曾列：SuperGrok Plus / Heavy、Cursor Pro+ / Ultra、Teams Standard / Premium。<br />
+社区报道称后续扩至更多档位（含部分 Pro / 基础 SuperGrok）并有试用。</p>
+<p><strong>实操：打开 <a href="https://x.ai/bot">x.ai/bot</a> 或 App 内 Usage &amp; Billing，以你账号显示为准。</strong></p>
+<p>常见计费形态：每周内含用量 + 可按需超额；同时有 Cursor 与 SuperGrok 时，官方称用额度更高的一侧。</p>
+<h3 id="_6">平台</h3>
+<table>
+<thead>
+<tr>
+<th>平台</th>
+<th>支持</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>macOS</td>
+<td>Apple silicon / Intel</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>x64 / Arm64</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td>x64 / Arm64：<code>.deb</code> / <code>.rpm</code> / AppImage</td>
+</tr>
+<tr>
+<td>iPhone</td>
+<td>iOS 18+</td>
+</tr>
+<tr>
+<td>Android</td>
+<td>9+（以 FAQ 为准）</td>
+</tr>
+<tr>
+<td>iPad</td>
+<td>首发不支持</td>
+</tr>
+</tbody>
+</table>
+<p>早期文章写「无 Linux 客户端」的，已过时。</p>
+<h3 id="_7">隐私硬门槛</h3>
+<p>Grok Bot <strong>需要云端数据存储</strong>。Cursor 若仍是 <strong>Legacy Privacy Mode</strong>，必须先改设置，否则起不来。</p>
+<hr />
+<h2 id="5">5. 安装与登录</h2>
+<h3 id="_8">下载</h3>
+<p><a href="https://x.ai/bot">x.ai/bot</a> 选对应系统。Linux 在 More downloads。</p>
+<h3 id="_9">登录</h3>
+<ol>
+<li>Get started / Sign In with Cursor  </li>
+<li>浏览器完成认证  </li>
+<li>回到 App  </li>
+</ol>
+<p>首次引导会问常用工具——<strong>只影响推荐，不会自动连上工具</strong>。云电脑在后台准备。</p>
+<h3 id="_10">两类更新（别搞混）</h3>
+<table>
+<thead>
+<tr>
+<th>更新什么</th>
+<th>入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>App</strong></td>
+<td>Settings → Check for Updates</td>
+</tr>
+<tr>
+<td><strong>云电脑</strong></td>
+<td>Update Agent Computer（尽量保留持久文件与登录）</td>
+</tr>
+<tr>
+<td><strong>最后手段</strong></td>
+<td>Reset Agent Computer（可能丢未同步工作）</td>
+</tr>
+</tbody>
+</table>
+<p>更 App ≠ 重置云电脑。</p>
+<p><img alt="官方 Get started" src="https://upload.maynor1024.live/file/02-get-started.png" /></p>
+<hr />
+<h2 id="6">6. 核心概念</h2>
+<pre><code class="language-text">你（审批 / 2FA / 接管）
+        │
+        ▼
+   Grok Bot App ── Bot A / Bot B / 群聊
+        │
+        ▼
+  一台账号级云端电脑
+  （/workspace · Cookie · 终端凭证 · Plugins）
+        │
+   Skill（怎么做） + Routine（何时做）
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>名词</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bot</td>
+<td>有名字、职责、对话、记忆的持久 Agent</td>
+</tr>
+<tr>
+<td>Cloud computer</td>
+<td>账号级共享云 VM</td>
+</tr>
+<tr>
+<td>Plugin / Connector</td>
+<td>结构化接入服务（MCP 等）</td>
+</tr>
+<tr>
+<td>Skill</td>
+<td>「怎么做」的可复用说明书</td>
+</tr>
+<tr>
+<td>Routine</td>
+<td>「何时做」：定时或事件</td>
+</tr>
+<tr>
+<td>Auto Review</td>
+<td>自动审查；可 Require Approval / Always Allow</td>
+</tr>
+<tr>
+<td>Teach a task</td>
+<td>演示一遍生成 Skill 草稿（约 ≤10 分钟）</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="官方 Overview" src="https://upload.maynor1024.live/file/01-overview.png" /></p>
+<hr />
+<h2 id="7-bot-profile">7. 创建 Bot 与写好 Profile</h2>
+<p>账号上限约：<strong>50 个 Bot + 群聊合计</strong>。</p>
+<h3 id="_11">何时新建</h3>
+<p>工作有独立的目标、工具集、风格、审批边界或周期 → 就该单独一个 Bot。<br />
+「万能助手」通常上下文乱、难复用。</p>
+<h3 id="_12">创建步骤</h3>
+<ol>
+<li><code>New</code> / <code>Cmd/Ctrl+N</code> → Create new agent  </li>
+<li>Edit Profile：名字、title、描述、头像  </li>
+<li>用一单具体任务开聊  </li>
+</ol>
+<h3 id="profile-vs">Profile vs 消息</h3>
+<table>
+<thead>
+<tr>
+<th>放进描述（长期）</th>
+<th>放进消息（本单）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>审批边界、输出风格、禁止事项</td>
+<td>本周目标、名单、附件</td>
+</tr>
+<tr>
+<td>「未经批准绝不外发」</td>
+<td>「给这 12 个客户写草稿」</td>
+</tr>
+</tbody>
+</table>
+<p>描述模板：</p>
+<blockquote>
+<p>Own the weekly account-health review. Pull product usage and support signals, flag churn/expansion evidence, produce a linked watch list. <strong>Never contact a customer or change an account without approval.</strong></p>
+</blockquote>
+<p>经验：若描述写得像「立刻开工」，Bot 可能一创建就跑——可加一句「把 profile 当 standing context，等单独消息再开始」。</p>
+<h3 id="_13">固定 / 隐藏 / 复制 / 删除</h3>
+<ul>
+<li><strong>Pin</strong>：钉在侧栏  </li>
+<li><strong>Hide</strong>：从列表隐藏，<strong>不</strong>暂停 Routine  </li>
+<li><strong>Duplicate</strong>：复制 profile / Skill / Routine；不复制聊天与记忆  </li>
+<li><strong>Delete</strong>：删对话与其 Routine；<strong>共享电脑上的文件与登录可能仍在</strong>  </li>
+</ul>
+<p>侧栏常见删除：右键 Bot → Delete。</p>
+<p><img alt="官方 Bots" src="https://upload.maynor1024.live/file/04-bots.png" /></p>
+<hr />
+<h2 id="8">8. 怎么下任务</h2>
+<h3 id="_14">五要素（官方建议）</h3>
+<p>Outcome · Sources · Constraints · Deliverable · Review point</p>
+<h3 id="_15">五分钟练习（无需登录）</h3>
+<blockquote>
+<p>Summarize this document in five bullets. List every date, decision, and open question separately. Cite section for each item. Do not change the source file.</p>
+</blockquote>
+<h3 id="_16">需要登录仪表盘时</h3>
+<blockquote>
+<p>Open our analytics dashboard and compare this week's new-user activation with the previous four weeks. Identify the largest step-level change and draft an investigation plan with chart links. Do not change dashboards. Ask me to sign in if needed.</p>
+</blockquote>
+<h3 id="_17">六级用法心法</h3>
+<ol>
+<li>先装好  </li>
+<li>先连<strong>一个</strong>日常插件  </li>
+<li><strong>一个窄职责</strong>，不是一整份 JD  </li>
+<li><strong>先建审批，再给自主权</strong>  </li>
+<li>稳定后再 Routine  </li>
+<li><strong>第一次定时任务盯完整场</strong></li>
+</ol>
+<hr />
+<h2 id="9">9. 云端电脑与本机电脑</h2>
+<h3 id="_18">共享规则（安全关键）</h3>
+<p>账号下所有 Bot <strong>共用一台云电脑</strong>：Cookie、<code>/workspace</code>、CLI 凭证都共享。<br />
+<strong>不要把「多个 Bot」当成安全边界。</strong></p>
+<p>每个 Bot 有独立屏幕，可并行操作；但<strong>同一 Bot 同时只能跑一个 computer-use</strong>。屏幕隔离 ≠ 安全隔离。</p>
+<p><img alt="官方 Computer" src="https://upload.maynor1024.live/file/03-computer-and-apps.png" /></p>
+<h3 id="_19">观看与接管</h3>
+<ul>
+<li>打开 Agent Computer 看实时操作  </li>
+<li>关预览 / 关本机 <strong>不停</strong>云端工作  </li>
+<li>密码、Passkey、2FA、CAPTCHA、支付 → <strong>接管完成，再交还</strong>  </li>
+<li>出现 Secret Request 就在卡片里填，不要贴进聊天  </li>
+</ul>
+<h3 id="_20">工作区</h3>
+<ul>
+<li>持久文件放 <code>/workspace</code>，文件夹命名清晰  </li>
+<li>Update / Recover 通常保留持久状态；<strong>Reset 慎用</strong>  </li>
+</ul>
+<h3 id="_21">本机电脑</h3>
+<p>Settings → General → Agent → <strong>Execution on Local Computer</strong><br />
+默认建议 Ask / Never；没有明确本机需求就别开 Always。</p>
+<hr />
+<h2 id="10-plugins">10. Plugins / 连接器</h2>
+<p><strong>有 Connector 就优先用 Connector</strong>（比点网页稳、往往更省用量）。</p>
+<ol>
+<li>Settings → Plugins → Add  </li>
+<li>浏览器授权  </li>
+<li>聊天里 <code>@</code> 挂接；<code>/</code> 引用 Skill  </li>
+</ol>
+<p>Connector <strong>账号级共享</strong>，不是某个 Bot 私有。</p>
+<p>事件触发（Slack / GitHub 等）可能走 <strong>Cursor 账号集成</strong>，与 Plugins 里的同名插件不一定是同一条连接——以客户端提示为准。监听规则要窄。</p>
+<p>实操：只连当前工作流需要的；能只读就先只读；定期审查；不用了就卸插件并在源服务 revoke。</p>
+<p><img alt="授权流实录" src="https://upload.maynor1024.live/file/01-grok-build-auth.png" /></p>
+<p><em>云电脑授权流：用户通常只需点「允许」</em></p>
+<hr />
+<h2 id="11">11. 文件与交付物</h2>
+<h3 id="_22">附件（桌面）</h3>
+<ul>
+<li>一次最多 <strong>6</strong> 个  </li>
+<li>文档 / 图 / 音频 ≤ <strong>25 MB</strong>；视频 ≤ <strong>200 MB</strong>  </li>
+<li>加密或怪格式可先转 PDF / CSV / 文本  </li>
+</ul>
+<p>说明每个附件角色，例如：「PDF 是政策原文，表格是本月流水；对账后另存新表，勿改原件。」</p>
+<h3 id="_23">可审查结果</h3>
+<p>重要工作让它分开写：</p>
+<ol>
+<li>事实  </li>
+<li>假设  </li>
+<li>已完成动作  </li>
+<li>等待审批  </li>
+<li>未决问题  </li>
+</ol>
+<p>并要求源链接、截图、时区时间戳、action log。<br />
+<strong>会变的事实</strong>放 <code>/workspace</code> 文件，不要只塞进「记忆」。</p>
+<hr />
+<h2 id="12-skill-teach-routine">12. Skill · Teach · Routine</h2>
+<p><img alt="官方 Skills &amp; Routines" src="https://upload.maynor1024.live/file/05-skills-routines.png" /></p>
+<h3 id="skill-vs-routine">Skill vs Routine</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Skill</th>
+<th>Routine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>回答</td>
+<td><strong>怎么做</strong></td>
+<td><strong>何时做</strong></td>
+</tr>
+<tr>
+<td>内容</td>
+<td>步骤、校验、输出、审批点</td>
+<td>归属 Bot、日程/事件、缺数据策略</td>
+</tr>
+<tr>
+<td>复用</td>
+<td>跨 Bot（可能需启用）</td>
+<td>绑在某一个 Bot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="skill-6">好 Skill 写清 6 件事</h3>
+<p>何时用 · 输入与权限 · 顺序 · 如何校验 · 返回什么 · 什么必须审批</p>
+<p>保存示例：</p>
+<blockquote>
+<p>Save the process we just used as a skill called “Weekly account health.” Include sources, risk definitions, output format, and “customer contact always needs approval.”</p>
+</blockquote>
+<p><code>/</code> 引用；看不到就去 Settings → Plugins → <strong>Yours</strong> 给当前 Bot 启用。<br />
+<strong>手动跑通再保存</strong>；Skill 要窄。</p>
+<h3 id="teach-a-task">Teach a task</h3>
+<ol>
+<li>一对一对话 + 电脑视图 → Teach a task  </li>
+<li>先说目标，再演示（≤ 约 10 分钟，不录麦）  </li>
+<li>审草稿，补失败处理与审批边界  </li>
+<li>换一组输入测试后再排程  </li>
+</ol>
+<p>没有该按钮时：用文字让它根据刚完成的任务写 Skill。</p>
+<h3 id="routine">Routine</h3>
+<p>创建示例：</p>
+<blockquote>
+<p>Every weekday at 8:00 AM, run the Daily customer-risk skill against the current account list. Post a linked watch list here. Do not contact customers. If source data is unavailable, report failure instead of using old data.</p>
+</blockquote>
+<p>事件触发示例：</p>
+<blockquote>
+<p>When <code>#customer-escalations</code> has a ticket link and “needs repro,” reproduce in staging and post a repro pack here. Never post back to Slack without approval.</p>
+</blockquote>
+<p>管理：Bot → <strong>View conversation details</strong> → <strong>Routines</strong><br />
+上限：每 Bot 约 <strong>50</strong> 条；每条保留约 <strong>20</strong> 次历史。删除不可撤销。<br />
+<strong>隐藏 Bot 不会停 Routine。</strong></p>
+<p><img alt="Routine DataCamp" src="https://upload.maynor1024.live/file/12-datacamp-routine.png" /></p>
+<p><strong>Test run 会做真事</strong>——用安全输入，写操作仍放审批后。</p>
+<p>可信清单：</p>
+<ul>
+<li>[ ] 先自动化准备 / 草稿  </li>
+<li>[ ] 外发 / 购买 / 删除 / 发布 / 改生产 → 审批  </li>
+<li>[ ] 无数据 / 过期数据策略写死  </li>
+<li>[ ] 源系统变更后重测  </li>
+</ul>
+<p><img alt="交接实录" src="https://upload.maynor1024.live/file/02-handover.png" /></p>
+<p><em>好的交接：先摸结构，再主动说明缺什么权限</em></p>
+<hr />
+<h2 id="13">13. 审批与安全</h2>
+<p><img alt="官方 Approvals" src="https://upload.maynor1024.live/file/06-approvals-security.png" /></p>
+<h3 id="_24">在请求里设边界</h3>
+<blockquote>
+<p>Reconcile campaign data and draft a budget change. Do not change the campaign or message the agency. Ask for approval after showing current vs proposed vs expected impact.</p>
+</blockquote>
+<p>明确要求审批：发消息、发布、付款、删除、改权限、改生产、接受条款。<br />
+<strong>审批管的是拟议动作，撤销不了已经做完的事。</strong></p>
+<h3 id="auto-review">Auto Review</h3>
+<p>Settings → General → Auto-review  </p>
+<ul>
+<li>Require Approval：匹配就停  </li>
+<li>Always Allow：审查未另拦才放行  </li>
+<li>同时命中时 <strong>Require 优先</strong>  </li>
+</ul>
+<p>写窄规则；避免「浏览器里什么都允许」。</p>
+<h3 id="_25">回收权限</h3>
+<ol>
+<li>暂停 / 删除 Routine  </li>
+<li>浏览器登出  </li>
+<li>卸插件并 revoke  </li>
+<li>清 <code>/workspace</code> 敏感文件  </li>
+<li>隐藏或删除 Bot  </li>
+</ol>
+<p>最小权限：少连工具、先只读、高后果永远审批。</p>
+<hr />
+<h2 id="14-bot">14. 多 Bot、群聊与分享</h2>
+<h3 id="_26">组队</h3>
+<ol>
+<li>先让一个 Bot 端到端负责一个结果  </li>
+<li>出现稳定专家职责再加第二个  </li>
+<li>交接需要可见时再开群聊  </li>
+<li>对外动作统一审批  </li>
+</ol>
+<p>群聊规模社区常见约 <strong>2–6</strong> 个 Bot（以客户端为准）。</p>
+<h3 id="_27">分享</h3>
+<p>复制 share link → 对方预览后 Add to Grok Bot。<br />
+对方得到<strong>配置副本</strong>，得不到你的电脑、登录、聊天。<br />
+分享前去掉密钥、内网 URL、客户数据。</p>
+<p><img alt="运营实录" src="https://upload.maynor1024.live/file/03-keys-and-meetup.png" /></p>
+<p><img alt="对外投稿" src="https://upload.maynor1024.live/file/04-small-site-promo.png" /></p>
+<hr />
+<h2 id="15-prompt">15. 场景 Prompt 模板</h2>
+<p>来源：<a href="https://docs.x.ai/grok-bot/use-cases">官方 Use cases</a>。套路一律：<strong>只读准备 → 你审查 → 再加批准动作 / Routine</strong>。</p>
+<p><img alt="官方 Use cases" src="https://upload.maynor1024.live/file/07-use-cases.png" /></p>
+<p><strong>Sales Outbound</strong>  </p>
+<blockquote>
+<p>Research the 25 accounts in this CRM view. Score vs ICP and intent, find up to 3 contacts each, draft email/LinkedIn in the attached style. Skip active sequences. <strong>Return a review list; do not send or enroll.</strong></p>
+</blockquote>
+<p><strong>Talent Scout</strong>  </p>
+<blockquote>
+<p>Find 20 candidates for this role. Exclude anyone already in ATS, explain evidence, draft outreach in my voice. <strong>Do not contact anyone.</strong></p>
+</blockquote>
+<p><strong>Paid Media</strong>  </p>
+<blockquote>
+<p>Pull spend/performance by campaign vs budget and target CAC; recommend reallocations with numbers; draft a Slack update. <strong>Do not change budgets or send.</strong></p>
+</blockquote>
+<p><strong>Expense Manager</strong>  </p>
+<blockquote>
+<p>Build this week's expense summary vs policy; match receipts; flag exceptions; draft one follow-up per owner. <strong>Do not send or change reimbursements.</strong></p>
+</blockquote>
+<p><strong>Product Performance</strong>  </p>
+<blockquote>
+<p>Investigate checkout latency since yesterday's release. Review dashboards/traces; return a short write-up with screenshots and links. Separate facts from hypotheses. <strong>Do not change production.</strong></p>
+</blockquote>
+<p><strong>Bug Reproduction</strong>  </p>
+<blockquote>
+<p>Reproduce this bug in staging with a fresh test account. Return steps, expected vs actual, screenshots, environment notes. <strong>No production customer data.</strong></p>
+</blockquote>
+<p><strong>Account Health</strong>  </p>
+<blockquote>
+<p>Rank portfolio accounts by usage, support, renewal, stakeholder activity. Evidence + why it matters + next step. <strong>Do not contact customers or edit CRM.</strong></p>
+</blockquote>
+<p><strong>Chief of Staff</strong>  </p>
+<blockquote>
+<p>Digest activity since yesterday across approved channels vs this priority doc. Each item: source, why it matters, next step, whether I owe a decision. <strong>Do not send messages or change meetings.</strong></p>
+</blockquote>
+<h3 id="bot-7">固化成 Bot 的 7 步</h3>
+<ol>
+<li>职责 / 系统 / 格式 / 边界写进描述  </li>
+<li>安全范围跑真任务  </li>
+<li>改到可审查  </li>
+<li>存 Skill  </li>
+<li>换输入再测  </li>
+<li>写清失败策略再建 Routine  </li>
+<li>对外动作永远审批  </li>
+</ol>
+<h3 id="_28">可直接用的中文开场</h3>
+<pre><code class="language-text">你是我的「周报助理」。
+规则：
+1) 只用我批准的来源；每条必须带源链接
+2) 分开写：事实 / 推断 / 需要我决策的事项
+3) 不要发送消息、不要改日历、不要改生产
+4) 源不可用就报告失败，禁止用过期缓存凑数
+先根据下一条消息的「本周优先事项」出草稿，然后停下等我确认；
+确认后再谈是否做成每周一 9:00 的 Routine。
+</code></pre>
+<hr />
+<h2 id="16">16. 界面速查与排错</h2>
+<h3 id="_29">常用入口</h3>
+<table>
+<thead>
+<tr>
+<th>想做的事</th>
+<th>入口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新建 Bot</td>
+<td>New / <code>Cmd/Ctrl+N</code></td>
+</tr>
+<tr>
+<td>改 Profile</td>
+<td>Bot actions → Edit Profile</td>
+</tr>
+<tr>
+<td>看云电脑</td>
+<td>Agent Computer</td>
+</tr>
+<tr>
+<td>装插件</td>
+<td>Settings → Plugins</td>
+</tr>
+<tr>
+<td>管 Routine</td>
+<td>View conversation details → Routines</td>
+</tr>
+<tr>
+<td>Auto-review</td>
+<td>Settings → General → Auto-review</td>
+</tr>
+<tr>
+<td>本机执行</td>
+<td>Settings → General → Agent → Local Computer</td>
+</tr>
+<tr>
+<td>用量</td>
+<td>Usage &amp; Billing</td>
+</tr>
+<tr>
+<td>更 App</td>
+<td>Check for Updates</td>
+</tr>
+<tr>
+<td>更云电脑</td>
+<td>Update Agent Computer</td>
+</tr>
+</tbody>
+</table>
+<p>单 Bot 信息：点聊天标题里的名字（或 <code>Cmd+Shift+I</code>）。</p>
+<h3 id="_30">排错（先做破坏性最小的）</h3>
+<p><img alt="官方 Troubleshooting" src="https://upload.maynor1024.live/file/08-troubleshooting.png" /></p>
+<p><strong>登录失败</strong><br />
+保持 App 打开 → 确认浏览器登录成功 → 手动切回 → 再试 → 查资格 / Legacy Privacy Mode。</p>
+<p><strong>电脑一直 Starting</strong><br />
+等几分钟 → Retry → 重启 App → 更 App → Update Agent Computer。</p>
+<p><strong>电脑 Unreachable</strong><br />
+Retry → 重启 → Recover → Update → <strong>最后才 Reset</strong>。</p>
+<p><strong>Bot 卡住</strong><br />
+看状态与电脑视图（登录 / CAPTCHA / 审批）→ 短指令纠正 → <code>Stop now</code> → 查用量。</p>
+<p><strong>网站反复登录</strong><br />
+接管登录并完成 2FA → 确认已登录页加载完 → 让它从当前页继续。</p>
+<p><strong>插件认证失败</strong><br />
+Plugins 页重认证 → 对账号授权 → 组织变量是否缺失 → revoke 后重连。</p>
+<p><strong>Routine 没跑</strong><br />
+是否启用、时区、归属 Bot、插件认证、源是否可达、用量是否暂停；事件触发再核对频道 / 仓库 / 规则。</p>
+<p>联系支持前收集：App 版本、OS、错误原文、Bot/Routine 名、时间与时区、conversation ID。<strong>不要</strong>附带密码或 OTP。</p>
+<hr />
+<h2 id="17-faq">17. FAQ</h2>
+<p><strong>怎么用人民币订阅？</strong><br />
+见 <a href="#3-怎么订阅与开通">第 3 章</a>。购买页：https://momoai.dadoudou117.com/buy/9 （【正规实付】SuperGrok 1 月 CDK，含 X Premium+，￥349，微信下单后 CDK 充值）。</p>
+<p><strong>关电脑还能干活吗？</strong><br />
+能。工作在云端。</p>
+<p><strong>每个 Bot 一台电脑吗？</strong><br />
+否。一账号一台共享云电脑。</p>
+<p><strong>Skill 和 Routine？</strong><br />
+Skill = 怎么做；Routine = 何时做。先测 Skill。</p>
+<p><strong>能演示给它看吗？</strong><br />
+Teach a task 可用时可以（约 10 分钟上限）。</p>
+<p><strong>什么必须审批？</strong><br />
+高风险动作与 Auto-review 规则；密码类走电脑接管。</p>
+<p><strong>删除 Bot 会清登录吗？</strong><br />
+不会自动清共享 Session / 文件。</p>
+<p><strong>隐藏会停 Routine 吗？</strong><br />
+不会。</p>
+<p><strong>模型能自选吗？</strong><br />
+通常无模型下拉，由产品路由。</p>
+<hr />
+<h2 id="18">18. 附录：来源与图床链接</h2>
+<h3 id="_31">官方</h3>
+<ul>
+<li>https://docs.x.ai/grok-bot/overview  </li>
+<li>https://docs.x.ai/grok-bot/get-started  </li>
+<li>https://docs.x.ai/grok-bot/computer-and-apps  </li>
+<li>https://docs.x.ai/grok-bot/bots  </li>
+<li>https://docs.x.ai/grok-bot/skills-routines-and-automations  </li>
+<li>https://docs.x.ai/grok-bot/files-and-results  </li>
+<li>https://docs.x.ai/grok-bot/use-cases  </li>
+<li>https://docs.x.ai/grok-bot/approvals-security-and-privacy  </li>
+<li>https://docs.x.ai/grok-bot/faq  </li>
+<li>https://docs.x.ai/grok-bot/troubleshooting  </li>
+<li>https://x.ai/bot  </li>
+</ul>
+<h3 id="_32">社区精选</h3>
+<ul>
+<li><a href="https://flaviocopes.com/grok-bot/">Flavio Copes 深潜</a>  </li>
+<li><a href="https://www.datacamp.com/tutorial/grok-bot-tutorial">DataCamp：Skill / Routine / Approvals</a>  </li>
+<li><a href="https://electrify.tw/what-is-grok-bot/">electrify.tw 中文总览</a>  </li>
+<li><a href="https://grokbot.aihuangshu.com/">橙皮书 × Awesome 手册</a>  </li>
+<li><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a>  </li>
+</ul>
+<p>资格、Linux/Android、价格等处，社区与文档可能短暂不一致——<strong>以官方与账号内显示为准</strong>。</p>
+<h3 id="_33">图床链接清单</h3>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grok-bot-guide-cover-2026.png</td>
+<td>https://upload.maynor1024.live/file/grok-bot-guide-cover-2026.png</td>
+</tr>
+<tr>
+<td>flavio-product-page.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-product-page.jpg</td>
+</tr>
+<tr>
+<td>flavio-sign-in-screen.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-sign-in-screen.jpg</td>
+</tr>
+<tr>
+<td>flavio-account-authorization.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-account-authorization.jpg</td>
+</tr>
+<tr>
+<td>flavio-macos-installer.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-macos-installer.jpg</td>
+</tr>
+<tr>
+<td>flavio-create-first-bot.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-create-first-bot.jpg</td>
+</tr>
+<tr>
+<td>flavio-blog-pulse-role.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-blog-pulse-role.jpg</td>
+</tr>
+<tr>
+<td>flavio-blog-pulse-first-run.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg</td>
+</tr>
+<tr>
+<td>flavio-plugins.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-plugins.jpg</td>
+</tr>
+<tr>
+<td>flavio-daily-routine.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-daily-routine.jpg</td>
+</tr>
+<tr>
+<td>flavio-blog-pulse-morning-report.jpg</td>
+<td>https://upload.maynor1024.live/file/flavio-blog-pulse-morning-report.jpg</td>
+</tr>
+<tr>
+<td>01-overview.png</td>
+<td>https://upload.maynor1024.live/file/01-overview.png</td>
+</tr>
+<tr>
+<td>02-get-started.png</td>
+<td>https://upload.maynor1024.live/file/02-get-started.png</td>
+</tr>
+<tr>
+<td>03-computer-and-apps.png</td>
+<td>https://upload.maynor1024.live/file/03-computer-and-apps.png</td>
+</tr>
+<tr>
+<td>04-bots.png</td>
+<td>https://upload.maynor1024.live/file/04-bots.png</td>
+</tr>
+<tr>
+<td>05-skills-routines.png</td>
+<td>https://upload.maynor1024.live/file/05-skills-routines.png</td>
+</tr>
+<tr>
+<td>06-approvals-security.png</td>
+<td>https://upload.maynor1024.live/file/06-approvals-security.png</td>
+</tr>
+<tr>
+<td>07-use-cases.png</td>
+<td>https://upload.maynor1024.live/file/07-use-cases.png</td>
+</tr>
+<tr>
+<td>08-troubleshooting.png</td>
+<td>https://upload.maynor1024.live/file/08-troubleshooting.png</td>
+</tr>
+<tr>
+<td>09-product-page.png</td>
+<td>https://upload.maynor1024.live/file/09-product-page.png</td>
+</tr>
+<tr>
+<td>10-datacamp-app.png</td>
+<td>https://upload.maynor1024.live/file/10-datacamp-app.png</td>
+</tr>
+<tr>
+<td>11-datacamp-agent-computer.png</td>
+<td>https://upload.maynor1024.live/file/11-datacamp-agent-computer.png</td>
+</tr>
+<tr>
+<td>12-datacamp-routine.png</td>
+<td>https://upload.maynor1024.live/file/12-datacamp-routine.png</td>
+</tr>
+<tr>
+<td>01-grok-build-auth.png</td>
+<td>https://upload.maynor1024.live/file/01-grok-build-auth.png</td>
+</tr>
+<tr>
+<td>02-handover.png</td>
+<td>https://upload.maynor1024.live/file/02-handover.png</td>
+</tr>
+<tr>
+<td>03-keys-and-meetup.png</td>
+<td>https://upload.maynor1024.live/file/03-keys-and-meetup.png</td>
+</tr>
+<tr>
+<td>04-small-site-promo.png</td>
+<td>https://upload.maynor1024.live/file/04-small-site-promo.png</td>
+</tr>
+<tr>
+<td>13-momoai-buy-9.png</td>
+<td>https://upload.maynor1024.live/file/13-momoai-buy-9.png</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>读完就能动手：先建一个窄 Bot，跑通一单草稿，再谈自动化。</em></p>
+  </article>
+  <p class="footer">站点由教程 Markdown 生成 · 源仓库 <a href="https://github.com/xianyu110/grokbot">xianyu110/grokbot</a></p>
+</main>
+</body>
+</html>
