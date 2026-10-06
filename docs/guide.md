@@ -1,6 +1,6 @@
 # Grok Bot 完整使用指南（2026 图文版）
 
-> 更新日期：2026-09-07  
+> 更新日期：2026-10-06  
 > 适用：想从 0 把 Grok Bot 用到「能定时交作业」的人  
 > 依据优先：[官方文档 docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview)；资格与价格以 [x.ai/bot](https://x.ai/bot) / App 内账单为准  
 > 截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；已托管于 `upload.maynor1024.live`
@@ -22,7 +22,7 @@
 | Grok Build | 写代码的 CLI / coding agent |
 | **Grok Bot** | **有电脑的 AI 同事**：登录、操作、定时、协作 |
 
-**还没开通？** 人民币下单见 [第 3 章 · 怎么订阅与开通](#3-怎么订阅与开通)（购买页：https://momoai.dadoudou117.com/buy/9 ，SuperGrok 1 月 CDK）。
+**还没开通？** 人民币下单见 [第 3 章 · 怎么订阅与开通](#3-怎么订阅与开通)（购买页：https://maynor.czvip.cn/products/grok-bot-monthly-488 ，Grok Bot 月卡）。
 
 **最稳的用法只有一条链：**
 
@@ -174,51 +174,46 @@ Grok Bot 本身挂在 **Cursor / SuperGrok** 资格上。国内常见有两条�
 
 人民币下单走本教程对接页：
 
-**购买链接：<https://momoai.dadoudou117.com/buy/9>**
+**购买链接：<https://maynor.czvip.cn/products/grok-bot-monthly-488>**
 
 | 项目 | 页面信息（2026-09-07） |
 |------|------------------------|
-| 商品名 | 【正规实付】SuperGrok **1 个月** CDK（含同时长 **X Premium+**） |
-| 标价 | **￥349.00** |
+| 商品名 | **Grok Bot 月卡** |
+| 标价 | **￥488.00** |
 | 发货 | 自动发货（卡密 / CDK） |
 | 支付 | 易支付 · 微信 |
 | 质保 | 30 天（见商品说明边界） |
-| 查单 | [订单查询](https://momoai.dadoudou117.com/order-search) |
+| 查单 | [订单查询](https://maynor.czvip.cn/guest/orders) |
 
 商品页要点（摘录）：
 
-- 宣称正规 iOS 实付订阅档（页面写约 50$/月），CDK 充值，**无需上号**，提供用户 **ID / Token** 即可  
-- **含同时长 X Premium+**（页面文案：X-Premium+ 赠送满血 Super Grok）  
-- 未使用卡密永久有效；有卡密可 24 小时自助充值  
-- 新号 / 老号都可充；可提前续费——**覆盖剩余时长，不是累加**（商品页强调三次）  
-- 虚拟商品使用后一般不可二次销售；售后范围以「CDK 无法使用」等卖家规则为准  
-- 常见封号风险提示：批量注册、账号共享、频繁换 IP、敏感内容等，欺诈 / 违规封号不质保  
-- 客服在线大约 9:00–4:00；充值失败可稍后重试，**勿用多张卡密连续怼同一账号**，先问客服  
+- 售价 **￥488**，商品名 **Grok Bot 月卡**
+- 游客可买，支付后按店铺规则自动发货（卡密）
+- 开通方式以商品页与客服说明为准；下单前请确认账号与质保边界
+- 虚拟商品使用后一般不可二次销售；封号等风控问题以卖家规则为准
+- 客服在线时间与售后范围以店铺当前说明为准
 
 ![订阅页](https://upload.maynor1024.live/file/13-momoai-buy-9.png)
 
-*momoAI 购买页：SuperGrok 1 月 CDK · ￥349 · 微信下单*
+*发卡网购买页：Grok Bot 月卡 · ￥488 · 微信下单*
 
 #### 下单步骤（照着点）
 
-1. 打开 https://momoai.dadoudou117.com/buy/9  
-2. 确认标题含「SuperGrok1月 CDK」、价格为 **￥349**  
+1. 打开 https://maynor.czvip.cn/products/grok-bot-monthly-488  
+2. 确认标题含「Grok Bot」、价格为 **￥488**  
 3. 填写**常用邮箱**（收货 / 查单）  
 4. 购买数量一般填 `1`  
-5. 输入图形验证码（可点图刷新）  
-6. 支付方式选 **易支付-微信**  
-7. 点 **下单**，完成微信支付  
-8. 到邮箱或 [订单查询](https://momoai.dadoudou117.com/order-search) 拿到 **CDK / 卡密**  
-9. 按卖家说明：把账号 **ID / Token** 发给客服，或走页面「自助站点」充值  
-10. 充值到账后，用该账号登录 Cursor / SuperGrok 体系，再打开 **Grok Bot** App  
+5. 按页面提示完成支付（常见为微信）  
+6. 到邮箱或 [订单查询](https://maynor.czvip.cn/guest/orders) 拿到卡密 / 开通信息  
+7. 按卖家说明完成开通后，安装 **Grok Bot** App 并登录  
 
-无货或未发货：先查单，保留支付截图，再联系客服（勿连刷多张卡密）。
+无货或未发货：先查单，保留支付截图，再联系客服。
 
 #### 开通后接到 Grok Bot
 
 ```text
-CDK 充值成功（SuperGrok + 页面所含 X Premium+）
-  → 确认官网会员状态已生效
+下单成功并拿到卡密 / 开通信息
+  → 按商品页说明完成充值或激活
   → 安装 Grok Bot，Sign in with Cursor（同一账号体系）
   → Usage & Billing 确认额度
   → 回到第 1 章「10 分钟上手」
@@ -227,11 +222,11 @@ CDK 充值成功（SuperGrok + 页面所含 X Premium+）
 #### 购买前请知悉
 
 - 这是**第三方店铺**，不是 x.ai / Cursor 官方收银台。  
-- 形态是 **CDK 充值到你的账号**，与「共享别人 SSO 上号」不同；但仍需遵守卖家规则与平台风控。  
-- **覆盖续费、非累加**：提前续费会覆盖时长，下单前算好到期节奏。  
-- 密钥 / CDK 不要发到公开群；只用可收信邮箱下单。  
+- 请仔细阅读商品页质保、封号与售后边界。  
+- 密钥 / 卡密不要发到公开群；只用可收信邮箱下单。  
 
-> 官方独享订阅适合要长期稳定、企业合规的人；要人民币快捷开 **SuperGrok 月卡（含 X Premium+）**，用上面链接，并仔细读商品页质保与封号说明。
+> 官方独享订阅适合要长期稳定、企业合规的人；要人民币快捷开 **Grok Bot 月卡**，用上面链接，并仔细读商品页说明。
+
 
 
 ---
@@ -692,7 +687,7 @@ Plugins 页重认证 → 对账号授权 → 组织变量是否缺失 → revoke
 
 
 **怎么用人民币订阅？**  
-见 [第 3 章](#3-怎么订阅与开通)。购买页：https://momoai.dadoudou117.com/buy/9 （【正规实付】SuperGrok 1 月 CDK，含 X Premium+，￥349，微信下单后 CDK 充值）。
+见 [第 3 章](#3-怎么订阅与开通)。购买页：https://maynor.czvip.cn/products/grok-bot-monthly-488 （Grok Bot 月卡，￥488，微信下单后自动发货）。
 
 
 **关电脑还能干活吗？**  
