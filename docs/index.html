@@ -93,7 +93,7 @@ a:hover{color:#fff; text-decoration:underline}
       <div class="cta">
         <a class="btn primary" href="#3-怎么订阅与开通">怎么订阅</a>
         <a class="btn" href="#1-10-分钟上手">10 分钟上手</a>
-        <a class="btn" href="https://maynor.czvip.cn/products/grok-bot-monthly-488" target="_blank" rel="noopener">人民币开通 Grok Bot</a>
+        <a class="btn" href="https://momoai.czvip.cn/products/grok-bot-monthly-488" target="_blank" rel="noopener">人民币开通 Grok Bot</a>
         <a class="btn" href="https://github.com/xianyu110/grokbot" target="_blank" rel="noopener">GitHub 仓库</a>
       </div>
     </div>
@@ -203,7 +203,7 @@ a:hover{color:#fff; text-decoration:underline}
   <article class="content">
     <h1 id="grok-bot-2026">Grok Bot 完整使用指南（2026 图文版）</h1>
 <blockquote>
-<p>更新日期：2026-10-06<br />
+<p>更新日期：2026-10-14<br />
 适用：想从 0 把 Grok Bot 用到「能定时交作业」的人<br />
 依据优先：<a href="https://docs.x.ai/grok-bot/overview">官方文档 docs.x.ai/grok-bot</a>；资格与价格以 <a href="https://x.ai/bot">x.ai/bot</a> / App 内账单为准<br />
 截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；已托管于 <code>upload.maynor1024.live</code></p>
@@ -236,7 +236,7 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 </tbody>
 </table>
-<p><strong>还没开通？</strong> 人民币下单见 <a href="#3-怎么订阅与开通">第 3 章 · 怎么订阅与开通</a>（购买页：https://maynor.czvip.cn/products/grok-bot-monthly-488 ，Grok Bot 月卡）。</p>
+<p><strong>还没开通？</strong> 人民币下单见 <a href="#3-怎么订阅与开通">第 3 章 · 怎么订阅与开通</a>（购买页：https://momoai.czvip.cn/products/grok-bot-monthly-488 ，Grok Bot 月卡 ￥399）。</p>
 <p><strong>最稳的用法只有一条链：</strong></p>
 <pre><code class="language-text">窄职责 Bot → 手动跑通一次 → 存成 Skill → Test run → 再开 Routine
 </code></pre>
@@ -279,7 +279,7 @@ a:hover{color:#fff; text-decoration:underline}
 <p>macOS：打开 dmg，拖进 Applications。</p>
 <p><img alt="安装" src="https://upload.maynor1024.live/file/flavio-macos-installer.jpg" /></p>
 <h3 id="step-2-bot">Step 2 · 只建一个窄职责 Bot</h3>
-<p><code>New</code> 或 <code>Cmd/Ctrl+N</code> → <strong>Create new agent</strong> → 改 Profile。</p>
+<p><code>New</code> 或 <code>Cmd/Ctrl+N</code> → <strong>Create new Bot</strong> → 改 Profile。</p>
 <ul>
 <li><strong>Name</strong>：方便辨认即可  </li>
 <li><strong>Title</strong>：一句话岗位  </li>
@@ -296,10 +296,10 @@ a:hover{color:#fff; text-decoration:underline}
 <li>Deliverable：交什么格式  </li>
 <li>Review point：停在哪等你  </li>
 </ol>
-<p>先要<strong>草稿 / 审查清单</strong>，不要一上来就让它外发。</p>
+<p>桌面也可用听写（<code>Cmd/Ctrl+D</code>）或语音对话。先要<strong>草稿 / 审查清单</strong>，不要一上来就让它外发。</p>
 <p><img alt="首次跑通" src="https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg" /></p>
 <h3 id="step-4">Step 4 · 需要登录时接管电脑</h3>
-<p>对话里打开 <strong>Agent Computer</strong> → Takeover → 自己完成密码 / 2FA / CAPTCHA → 交还控制。<br />
+<p>对话里打开 <strong>Computer</strong>（界面或仍写 Agent Computer）→ Take over → 自己完成密码 / 2FA / CAPTCHA → I'm done 交还。<br />
 <strong>密码不要贴进聊天。</strong></p>
 <p><img alt="Agent Computer" src="https://upload.maynor1024.live/file/11-datacamp-agent-computer.png" /></p>
 <p><em>Agent Computer：看它在点什么、卡在哪</em></p>
@@ -321,7 +321,8 @@ a:hover{color:#fff; text-decoration:underline}
 <li><strong>命名 Bot 有持久角色与记忆</strong>  </li>
 <li><strong>Connector / 浏览器双通道</strong>  </li>
 <li><strong>Skill + Routine</strong> 把流程固化  </li>
-<li><strong>多 Bot 可并行交接</strong>（仍共用一台电脑）</li>
+<li><strong>多 Bot 可并行交接</strong>（仍共用一台电脑）  </li>
+<li><strong>可从 X tag <code>@bot</code> 派活</strong>（地区有限；结果在 App）</li>
 </ol>
 <p><img alt="桌面界面" src="https://upload.maynor1024.live/file/10-datacamp-app.png" /></p>
 <p><em>桌面端对话界面示例（DataCamp 教程截图）</em></p>
@@ -331,90 +332,87 @@ a:hover{color:#fff; text-decoration:underline}
 <h3 id="31">3.1 官方路径（原厂）</h3>
 <ol>
 <li>打开 <a href="https://x.ai/bot">x.ai/bot</a> 或 Cursor / SuperGrok 定价页  </li>
-<li>订阅符合资格的套餐（FAQ 常见：SuperGrok Plus / Heavy、Cursor Pro+ / Ultra、Teams 等；具体以页面为准）  </li>
+<li>订阅符合资格的套餐（官方：付费个人 Cursor 计划、Cursor Teams；或关联个人 SuperGrok / Plus / Heavy；具体以 <a href="https://x.ai/bot">x.ai/bot</a> 为准）  </li>
 <li>用该 Cursor 账号登录 Grok Bot 桌面 / 手机 App  </li>
 <li>在 App 内 <strong>Usage &amp; Billing</strong> 确认已开通、周额度是否到账  </li>
 </ol>
 <p>适合：有外卡、能直连官方支付、希望账号完全自有。</p>
 <h3 id="32">3.2 推荐购买通道（本教程对接）</h3>
-<p>人民币下单走本教程对接页：</p>
-<p><strong>购买链接：<a href="https://maynor.czvip.cn/products/grok-bot-monthly-488">https://maynor.czvip.cn/products/grok-bot-monthly-488</a></strong></p>
+<p>人民币下单走本教程对接页（2026-10-14 复核仍可下单）：</p>
+<p><strong>购买链接：<a href="https://momoai.czvip.cn/products/grok-bot-monthly-488">https://momoai.czvip.cn/products/grok-bot-monthly-488</a></strong></p>
 <table>
 <thead>
 <tr>
 <th>项目</th>
-<th>页面信息（2026-09-07）</th>
+<th>页面信息（2026-10-14 实测）</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>商品名</td>
-<td><strong>Grok Bot 月卡</strong></td>
+<td><strong>Grok Bot 月卡（399）</strong></td>
 </tr>
 <tr>
 <td>标价</td>
-<td><strong>￥488.00</strong></td>
+<td><strong>￥399.00</strong></td>
+</tr>
+<tr>
+<td>说明</td>
+<td>可用 Grok Heavy · 稳定使用一个月（以商品页为准）</td>
 </tr>
 <tr>
 <td>发货</td>
-<td>自动发货（卡密 / CDK）</td>
+<td>自动发货</td>
 </tr>
 <tr>
-<td>支付</td>
-<td>易支付 · 微信</td>
-</tr>
-<tr>
-<td>质保</td>
-<td>30 天（见商品说明边界）</td>
+<td>购买</td>
+<td>游客可买 · 有库存时下单</td>
 </tr>
 <tr>
 <td>查单</td>
-<td><a href="https://maynor.czvip.cn/guest/orders">订单查询</a></td>
+<td><a href="https://momoai.czvip.cn/guest/orders">订单查询</a></td>
 </tr>
 </tbody>
 </table>
-<p>商品页要点（摘录）：</p>
+<p>商品页要点（摘录，<strong>以当下页面为准</strong>）：</p>
 <ul>
-<li>宣称正规 iOS 实付订阅档（页面写约 50$/月），CDK 充值，<strong>无需上号</strong>，提供用户 <strong>ID / Token</strong> 即可  </li>
-<li><strong>含同时长 X Premium+</strong>（页面文案：X-Premium+ 赠送满血 Super Grok）  </li>
-<li>未使用卡密永久有效；有卡密可 24 小时自助充值  </li>
-<li>新号 / 老号都可充；可提前续费——<strong>覆盖剩余时长，不是累加</strong>（商品页强调三次）  </li>
-<li>虚拟商品使用后一般不可二次销售；售后范围以「CDK 无法使用」等卖家规则为准  </li>
-<li>常见封号风险提示：批量注册、账号共享、频繁换 IP、敏感内容等，欺诈 / 违规封号不质保  </li>
-<li>客服在线大约 9:00–4:00；充值失败可稍后重试，<strong>勿用多张卡密连续怼同一账号</strong>，先问客服  </li>
+<li>售价 <strong>￥399</strong>，标题 <strong>Grok Bot 月卡（399）</strong>  </li>
+<li>文案提及可用 <strong>Grok Heavy</strong>、稳定使用一个月  </li>
+<li>游客可买，支付后按店铺规则自动发货  </li>
+<li>开通方式与发货内容以商品页 / 客服说明为准；下单前确认账号与售后边界  </li>
+<li>虚拟商品使用后一般不可二次销售；风控与封号以卖家规则为准  </li>
 </ul>
+<blockquote>
+<p>旧域名 <code>maynor.czvip.cn</code> 同路径在 2026-10-14 已无法打开有效商品详情；请用上面的 <strong>momoai</strong> 链接。</p>
+</blockquote>
 <p><img alt="订阅页" src="https://upload.maynor1024.live/file/13-momoai-buy-9.png" /></p>
-<p><em>发卡网购买页：Grok Bot 月卡 · ￥488 · 微信下单</em></p>
+<p><em>发卡网购买页示意（截图可能仍显示旧价；下单以页面实时标价为准，当前为 ￥399）</em></p>
 <h4 id="_3">下单步骤（照着点）</h4>
 <ol>
-<li>打开 https://maynor.czvip.cn/products/grok-bot-monthly-488  </li>
-<li>确认标题含「Grok Bot」、价格为 <strong>￥488</strong>  </li>
+<li>打开 https://momoai.czvip.cn/products/grok-bot-monthly-488  </li>
+<li>确认标题含「Grok Bot」、价格为 <strong>￥399</strong>（若页面改价，以页面为准）  </li>
 <li>填写<strong>常用邮箱</strong>（收货 / 查单）  </li>
 <li>购买数量一般填 <code>1</code>  </li>
-<li>输入图形验证码（可点图刷新）  </li>
-<li>支付方式选 <strong>易支付-微信</strong>  </li>
-<li>点 <strong>下单</strong>，完成微信支付  </li>
-<li>到邮箱或 <a href="https://maynor.czvip.cn/guest/orders">订单查询</a> 拿到 <strong>CDK / 卡密</strong>  </li>
-<li>按卖家说明：把账号 <strong>ID / Token</strong> 发给客服，或走页面「自助站点」充值  </li>
-<li>充值到账后，用该账号登录 Cursor / SuperGrok 体系，再打开 <strong>Grok Bot</strong> App  </li>
+<li>按页面提示完成支付  </li>
+<li>到邮箱或 <a href="https://momoai.czvip.cn/guest/orders">订单查询</a> 拿到开通信息  </li>
+<li>按卖家说明完成开通后，安装 <strong>Grok Bot</strong> App 并登录  </li>
 </ol>
-<p>无货或未发货：先查单，保留支付截图，再联系客服（勿连刷多张卡密）。</p>
+<p>无货或未发货：先查单，保留支付截图，再联系客服。</p>
 <h4 id="grok-bot">开通后接到 Grok Bot</h4>
-<pre><code class="language-text">CDK 充值成功（SuperGrok + 页面所含 X Premium+）
-  → 确认官网会员状态已生效
+<pre><code class="language-text">下单成功并拿到开通信息
+  → 按商品页说明完成充值或激活
   → 安装 Grok Bot，Sign in with Cursor（同一账号体系）
-  → Usage &amp; Billing 确认额度
-  → 回到第 1 章「10 分钟上手」
+  → 若来自 SuperGrok：Usage &amp; Billing → Link SuperGrok（界面可能写 Link SuperGrok Heavy）
+  → 确认周额度后，回到第 1 章「10 分钟上手」
 </code></pre>
 <h4 id="_4">购买前请知悉</h4>
 <ul>
 <li>这是<strong>第三方店铺</strong>，不是 x.ai / Cursor 官方收银台。  </li>
-<li>形态是 <strong>CDK 充值到你的账号</strong>，与「共享别人 SSO 上号」不同；但仍需遵守卖家规则与平台风控。  </li>
-<li><strong>覆盖续费、非累加</strong>：提前续费会覆盖时长，下单前算好到期节奏。  </li>
-<li>密钥 / CDK 不要发到公开群；只用可收信邮箱下单。  </li>
+<li>请仔细阅读商品页质保、封号与售后边界。  </li>
+<li>密钥 / 账号信息不发到公开群；只用可收信邮箱下单。  </li>
 </ul>
 <blockquote>
-<p>官方独享订阅适合要长期稳定、企业合规的人；要人民币快捷开 <strong>Grok Bot 月卡</strong>，用上面链接，并仔细读商品页质保与封号说明。</p>
+<p>官方独享订阅适合要长期稳定、企业合规的人；要人民币快捷开 <strong>Grok Bot 月卡</strong>，用上面链接，并仔细读商品页说明。</p>
 </blockquote>
 <hr />
 <h2 id="4">4. 资格、平台与隐私</h2>
@@ -422,10 +420,13 @@ a:hover{color:#fff; text-decoration:underline}
 <p>订阅下单步骤见上一章。本章补充官方名单、平台与隐私门槛。</p>
 </blockquote>
 <h3 id="_5">资格（会变，以账号为准）</h3>
-<p>官方 FAQ 曾列：SuperGrok Plus / Heavy、Cursor Pro+ / Ultra、Teams Standard / Premium。<br />
-社区报道称后续扩至更多档位（含部分 Pro / 基础 SuperGrok）并有试用。</p>
+<p>官方当前表述：</p>
+<ul>
+<li><strong>每一档付费个人 Cursor 计划</strong>，以及 <strong>Cursor Teams</strong></li>
+<li>或把个人 <strong>SuperGrok / SuperGrok Plus / SuperGrok Heavy</strong> 关联到 Cursor 账号</li>
+</ul>
 <p><strong>实操：打开 <a href="https://x.ai/bot">x.ai/bot</a> 或 App 内 Usage &amp; Billing，以你账号显示为准。</strong></p>
-<p>常见计费形态：每周内含用量 + 可按需超额；同时有 Cursor 与 SuperGrok 时，官方称用额度更高的一侧。</p>
+<p>常见计费形态：每周内含用量 + 符合条件时可按需超额（按实际服务模型计费）；同时有 Cursor 与 SuperGrok 时，官方称用额度更高的一侧。</p>
 <h3 id="_6">平台</h3>
 <table>
 <thead>
@@ -457,7 +458,7 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 <tr>
 <td>iPad</td>
-<td>首发不支持</td>
+<td>iPadOS 18+（与 iPhone 同用 iOS App）</td>
 </tr>
 </tbody>
 </table>
@@ -486,15 +487,19 @@ a:hover{color:#fff; text-decoration:underline}
 <tbody>
 <tr>
 <td><strong>App</strong></td>
-<td>Settings → Check for Updates</td>
+<td>Settings → Updates → Check for Updates</td>
 </tr>
 <tr>
 <td><strong>云电脑</strong></td>
-<td>Update Agent Computer（尽量保留持久文件与登录）</td>
+<td>Settings → Computer → <strong>Update Bot's Computer</strong>（尽量保留持久文件与登录）</td>
+</tr>
+<tr>
+<td><strong>不可达时</strong></td>
+<td>错误态里的 <strong>Recover</strong>（不在 Settings）</td>
 </tr>
 <tr>
 <td><strong>最后手段</strong></td>
-<td>Reset Agent Computer（可能丢未同步工作）</td>
+<td><strong>Reset Bot's Computer</strong>（可能丢未同步工作）</td>
 </tr>
 </tbody>
 </table>
@@ -543,7 +548,7 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 <tr>
 <td>Auto Review</td>
-<td>自动审查；可 Require Approval / Always Allow</td>
+<td>自动审查；可 Ask first / Allow automatically</td>
 </tr>
 <tr>
 <td>Teach a task</td>
@@ -560,7 +565,7 @@ a:hover{color:#fff; text-decoration:underline}
 「万能助手」通常上下文乱、难复用。</p>
 <h3 id="_12">创建步骤</h3>
 <ol>
-<li><code>New</code> / <code>Cmd/Ctrl+N</code> → Create new agent  </li>
+<li><code>New</code> / <code>Cmd/Ctrl+N</code> → Create new Bot  </li>
 <li>Edit Profile：名字、title、描述、头像  </li>
 <li>用一单具体任务开聊  </li>
 </ol>
@@ -627,7 +632,7 @@ a:hover{color:#fff; text-decoration:underline}
 <p><img alt="官方 Computer" src="https://upload.maynor1024.live/file/03-computer-and-apps.png" /></p>
 <h3 id="_19">观看与接管</h3>
 <ul>
-<li>打开 Agent Computer 看实时操作  </li>
+<li>打开 Computer 看实时操作  </li>
 <li>关预览 / 关本机 <strong>不停</strong>云端工作  </li>
 <li>密码、Passkey、2FA、CAPTCHA、支付 → <strong>接管完成，再交还</strong>  </li>
 <li>出现 Secret Request 就在卡片里填，不要贴进聊天  </li>
@@ -638,17 +643,18 @@ a:hover{color:#fff; text-decoration:underline}
 <li>Update / Recover 通常保留持久状态；<strong>Reset 慎用</strong>  </li>
 </ul>
 <h3 id="_21">本机电脑</h3>
-<p>Settings → General → Agent → <strong>Execution on Local Computer</strong><br />
+<p>Settings → General → Bot → <strong>Execution on Local Computer</strong>（已注册本机后也可在 Settings → Computer → Computers 按机设置）<br />
 默认建议 Ask / Never；没有明确本机需求就别开 Always。</p>
 <hr />
 <h2 id="10-plugins">10. Plugins / 连接器</h2>
 <p><strong>有 Connector 就优先用 Connector</strong>（比点网页稳、往往更省用量）。</p>
 <ol>
-<li>Settings → Plugins → Add  </li>
+<li>侧栏 <strong>Connect apps</strong>（或 Settings → Plugins）→ Add  </li>
 <li>浏览器授权  </li>
-<li>聊天里 <code>@</code> 挂接；<code>/</code> 引用 Skill  </li>
+<li>聊天里 <code>@</code> 挂接 Connector / Bot / Routine；<code>/</code> 引用 Skill  </li>
 </ol>
 <p>Connector <strong>账号级共享</strong>，不是某个 Bot 私有。</p>
+<p><strong>读 X 不必先连账号：</strong> Bot 可只读搜索公开帖、账号发帖、引用 / 转发、话题计数与趋势；私信、书签、主页时间线等需装 <strong>X plugin</strong> 并登录。</p>
 <p>事件触发（Slack / GitHub 等）可能走 <strong>Cursor 账号集成</strong>，与 Plugins 里的同名插件不一定是同一条连接——以客户端提示为准。监听规则要窄。</p>
 <p>实操：只连当前工作流需要的；能只读就先只读；定期审查；不用了就卸插件并在源服务 revoke。</p>
 <p><img alt="授权流实录" src="https://upload.maynor1024.live/file/01-grok-build-auth.png" /></p>
@@ -729,8 +735,8 @@ a:hover{color:#fff; text-decoration:underline}
 <p>When <code>#customer-escalations</code> has a ticket link and “needs repro,” reproduce in staging and post a repro pack here. Never post back to Slack without approval.</p>
 </blockquote>
 <p>管理：Bot → <strong>View conversation details</strong> → <strong>Routines</strong><br />
-上限：每 Bot 约 <strong>50</strong> 条；每条保留约 <strong>20</strong> 次历史。删除不可撤销。<br />
-<strong>隐藏 Bot 不会停 Routine。</strong></p>
+上限：每 Bot 约 <strong>50</strong> 条；每条保留约 <strong>20</strong> 次历史；日程间隔至少约 <strong>5 分钟</strong>。删除不可撤销。<br />
+<strong>隐藏 Bot 不会停 Routine。</strong> 长时间未打开 App 时，产品可能询问是否继续跑 Routine，无应答则暂停。</p>
 <p><img alt="Routine DataCamp" src="https://upload.maynor1024.live/file/12-datacamp-routine.png" /></p>
 <p><strong>Test run 会做真事</strong>——用安全输入，写操作仍放审批后。</p>
 <p>可信清单：</p>
@@ -754,9 +760,10 @@ a:hover{color:#fff; text-decoration:underline}
 <h3 id="auto-review">Auto Review</h3>
 <p>Settings → General → Auto-review  </p>
 <ul>
-<li>Require Approval：匹配就停  </li>
-<li>Always Allow：审查未另拦才放行  </li>
-<li>同时命中时 <strong>Require 优先</strong>  </li>
+<li><strong>Ask first</strong>：匹配就停，等你批  </li>
+<li><strong>Allow automatically</strong>：自动审查未另拦才放行  </li>
+<li>同时命中时 <strong>Ask first 优先</strong>  </li>
+<li>无人值守触发的审批卡约 <strong>10 分钟</strong>过期；过期动作不会执行  </li>
 </ul>
 <p>写窄规则；避免「浏览器里什么都允许」。</p>
 <h3 id="_25">回收权限</h3>
@@ -779,8 +786,9 @@ a:hover{color:#fff; text-decoration:underline}
 </ol>
 <p>群聊规模社区常见约 <strong>2–6</strong> 个 Bot（以客户端为准）。</p>
 <h3 id="_27">分享</h3>
-<p>复制 share link → 对方预览后 Add to Grok Bot。<br />
+<p>Share → <strong>Create template</strong> → Copy link（Public 或 Team-only）→ 对方在 x.ai 预览后 <strong>Add to Grok Bot</strong>。<br />
 对方得到<strong>配置副本</strong>，得不到你的电脑、登录、聊天。<br />
+侧栏 <strong>Marketplace</strong> 也可导入别人的 Bot 模板。<br />
 分享前去掉密钥、内网 URL、客户数据。</p>
 <p><img alt="运营实录" src="https://upload.maynor1024.live/file/03-keys-and-meetup.png" /></p>
 <p><img alt="对外投稿" src="https://upload.maynor1024.live/file/04-small-site-promo.png" /></p>
@@ -861,11 +869,11 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 <tr>
 <td>看云电脑</td>
-<td>Agent Computer</td>
+<td>对话里打开 Computer / Bot's computer</td>
 </tr>
 <tr>
 <td>装插件</td>
-<td>Settings → Plugins</td>
+<td>Connect apps / Settings → Plugins</td>
 </tr>
 <tr>
 <td>管 Routine</td>
@@ -873,11 +881,11 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 <tr>
 <td>Auto-review</td>
-<td>Settings → General → Auto-review</td>
+<td>Settings → General → Auto-review（Ask first / Allow automatically）</td>
 </tr>
 <tr>
 <td>本机执行</td>
-<td>Settings → General → Agent → Local Computer</td>
+<td>Settings → General → Bot → Execution on Local Computer</td>
 </tr>
 <tr>
 <td>用量</td>
@@ -889,7 +897,7 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 <tr>
 <td>更云电脑</td>
-<td>Update Agent Computer</td>
+<td>Update Bot's Computer</td>
 </tr>
 </tbody>
 </table>
@@ -899,7 +907,7 @@ a:hover{color:#fff; text-decoration:underline}
 <p><strong>登录失败</strong><br />
 保持 App 打开 → 确认浏览器登录成功 → 手动切回 → 再试 → 查资格 / Legacy Privacy Mode。</p>
 <p><strong>电脑一直 Starting</strong><br />
-等几分钟 → Retry → 重启 App → 更 App → Update Agent Computer。</p>
+等几分钟 → Retry → 重启 App → 更 App → Update Bot's Computer。</p>
 <p><strong>电脑 Unreachable</strong><br />
 Retry → 重启 → Recover → Update → <strong>最后才 Reset</strong>。</p>
 <p><strong>Bot 卡住</strong><br />
@@ -914,7 +922,7 @@ Plugins 页重认证 → 对账号授权 → 组织变量是否缺失 → revoke
 <hr />
 <h2 id="17-faq">17. FAQ</h2>
 <p><strong>怎么用人民币订阅？</strong><br />
-见 <a href="#3-怎么订阅与开通">第 3 章</a>。购买页：https://maynor.czvip.cn/products/grok-bot-monthly-488 （Grok Bot 月卡，￥488，微信下单后自动发货）。</p>
+见 <a href="#3-怎么订阅与开通">第 3 章</a>。购买页：https://momoai.czvip.cn/products/grok-bot-monthly-488 （Grok Bot 月卡 ￥399；以页面实时标价为准）。</p>
 <p><strong>关电脑还能干活吗？</strong><br />
 能。工作在云端。</p>
 <p><strong>每个 Bot 一台电脑吗？</strong><br />
@@ -929,8 +937,12 @@ Teach a task 可用时可以（约 10 分钟上限）。</p>
 不会自动清共享 Session / 文件。</p>
 <p><strong>隐藏会停 Routine 吗？</strong><br />
 不会。</p>
+<p><strong>能在 X 上 @bot 派活吗？</strong><br />
+可以（见 <a href="https://docs.x.ai/grok-bot/tag-on-x">Tag @bot on X</a>）：在帖子或回复里 tag <code>@bot</code>，主 Bot 接任务，<code>@bot</code> 公开短回确认。需把 X 账号连到 Grok 账号，且<strong>不是所有地区</strong>可用。结果在 Grok Bot App 对话里。</p>
+<p><strong>能语音下任务吗？</strong><br />
+能。桌面 <code>Cmd/Ctrl+D</code> 听写；也可 Start voice chat。手机用 Start dictation / voice chat。</p>
 <p><strong>模型能自选吗？</strong><br />
-通常无模型下拉，由产品路由。</p>
+通常无模型下拉，由产品路由（官方：Cursor 管理选型，无面向用户的模型选择器；用量统计可看到实际服务模型）。近期产品更新可能把部分任务路由到更强模型（社区/公开讨论常提到 Opus 级等），<strong>不以本教程宣称固定可用某一模型名</strong>——以 App 内用量与官方说明为准。</p>
 <hr />
 <h2 id="18">18. 附录：来源与图床链接</h2>
 <h3 id="_31">官方</h3>
@@ -945,6 +957,10 @@ Teach a task 可用时可以（约 10 分钟上限）。</p>
 <li>https://docs.x.ai/grok-bot/approvals-security-and-privacy  </li>
 <li>https://docs.x.ai/grok-bot/faq  </li>
 <li>https://docs.x.ai/grok-bot/troubleshooting  </li>
+<li>https://docs.x.ai/grok-bot/tag-on-x  </li>
+<li>https://docs.x.ai/grok-bot/mobile  </li>
+<li>https://docs.x.ai/grok-bot/security  </li>
+<li>https://docs.x.ai/grok-bot/chat-and-collaboration  </li>
 <li>https://x.ai/bot  </li>
 </ul>
 <h3 id="_32">社区精选</h3>
