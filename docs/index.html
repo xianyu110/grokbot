@@ -193,7 +193,7 @@ a:hover{color:#fff; text-decoration:underline}
 <li><a href="#18">18. 附录：来源与图床链接</a><ul>
 <li><a href="#_31">官方</a></li>
 <li><a href="#_32">社区精选</a></li>
-<li><a href="#_33">图床链接清单</a></li>
+<li><a href="#_33">本地截图清单</a></li>
 </ul>
 </li>
 </ul>
@@ -206,10 +206,10 @@ a:hover{color:#fff; text-decoration:underline}
 <p>更新日期：2026-10-14<br />
 适用：想从 0 把 Grok Bot 用到「能定时交作业」的人<br />
 依据优先：<a href="https://docs.x.ai/grok-bot/overview">官方文档 docs.x.ai/grok-bot</a>；资格与价格以 <a href="https://x.ai/bot">x.ai/bot</a> / App 内账单为准<br />
-截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；已托管于 <code>upload.maynor1024.live</code></p>
+截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；截图已收录于本仓库 <code>docs/assets/</code></p>
 </blockquote>
 <hr />
-<p><img alt="封面" src="https://upload.maynor1024.live/file/grok-bot-guide-cover-2026.png" /></p>
+<p><img alt="封面" src="assets/grok-bot-guide-cover-2026.png" /></p>
 <hr />
 <h2 id="30">先看结论（30 秒）</h2>
 <p><strong>Grok Bot ≠ grok.com 聊天，也 ≠ Grok Build。</strong><br />
@@ -270,14 +270,14 @@ a:hover{color:#fff; text-decoration:underline}
 <p>按这个顺序做，比先读完所有概念更有用。</p>
 <h3 id="step-1">Step 1 · 装好并登录</h3>
 <p>从 <a href="https://x.ai/bot">x.ai/bot</a> 下载桌面端（macOS / Windows / Linux），用 <strong>Cursor 账号</strong>登录。组织账号走 SSO。</p>
-<p><img alt="产品页" src="https://upload.maynor1024.live/file/flavio-product-page.jpg" /></p>
+<p><img alt="产品页" src="assets/flavio-product-page.jpg" /></p>
 <p><em>产品 / 下载入口</em></p>
-<p><img alt="登录" src="https://upload.maynor1024.live/file/flavio-sign-in-screen.jpg" /></p>
+<p><img alt="登录" src="assets/flavio-sign-in-screen.jpg" /></p>
 <p><em>首屏：Sign in with Cursor</em></p>
-<p><img alt="授权" src="https://upload.maynor1024.live/file/flavio-account-authorization.jpg" /></p>
+<p><img alt="授权" src="assets/flavio-account-authorization.jpg" /></p>
 <p><em>浏览器里确认授权的那个账号</em></p>
 <p>macOS：打开 dmg，拖进 Applications。</p>
-<p><img alt="安装" src="https://upload.maynor1024.live/file/flavio-macos-installer.jpg" /></p>
+<p><img alt="安装" src="assets/flavio-macos-installer.jpg" /></p>
 <h3 id="step-2-bot">Step 2 · 只建一个窄职责 Bot</h3>
 <p><code>New</code> 或 <code>Cmd/Ctrl+N</code> → <strong>Create new Bot</strong> → 改 Profile。</p>
 <ul>
@@ -285,8 +285,8 @@ a:hover{color:#fff; text-decoration:underline}
 <li><strong>Title</strong>：一句话岗位  </li>
 <li><strong>Description</strong>：写清结果、来源、禁止事项、审批边界  </li>
 </ul>
-<p><img alt="创建 Bot" src="https://upload.maynor1024.live/file/flavio-create-first-bot.jpg" /></p>
-<p><img alt="Profile" src="https://upload.maynor1024.live/file/flavio-blog-pulse-role.jpg" /></p>
+<p><img alt="创建 Bot" src="assets/flavio-create-first-bot.jpg" /></p>
+<p><img alt="Profile" src="assets/flavio-blog-pulse-role.jpg" /></p>
 <p><em>把「怎么干」写进描述，把「本周干什么」留给消息</em></p>
 <h3 id="step-3-5">Step 3 · 用 5 要素下一单真活</h3>
 <ol>
@@ -297,19 +297,19 @@ a:hover{color:#fff; text-decoration:underline}
 <li>Review point：停在哪等你  </li>
 </ol>
 <p>桌面也可用听写（<code>Cmd/Ctrl+D</code>）或语音对话。先要<strong>草稿 / 审查清单</strong>，不要一上来就让它外发。</p>
-<p><img alt="首次跑通" src="https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg" /></p>
+<p><img alt="首次跑通" src="assets/flavio-blog-pulse-first-run.jpg" /></p>
 <h3 id="step-4">Step 4 · 需要登录时接管电脑</h3>
 <p>对话里打开 <strong>Computer</strong>（界面或仍写 Agent Computer）→ Take over → 自己完成密码 / 2FA / CAPTCHA → I'm done 交还。<br />
 <strong>密码不要贴进聊天。</strong></p>
-<p><img alt="Agent Computer" src="https://upload.maynor1024.live/file/11-datacamp-agent-computer.png" /></p>
+<p><img alt="Agent Computer" src="assets/11-datacamp-agent-computer.png" /></p>
 <p><em>Agent Computer：看它在点什么、卡在哪</em></p>
 <h3 id="step-5-skill-routine">Step 5 · 跑通后再 Skill → Routine</h3>
 <p>手动结果满意 → 让它存 Skill → <code>/</code> 再测一次 → 建 Routine → <strong>先 Test run 盯完整场</strong> → 再启用定时。</p>
-<p><img alt="Plugins" src="https://upload.maynor1024.live/file/flavio-plugins.jpg" /></p>
+<p><img alt="Plugins" src="assets/flavio-plugins.jpg" /></p>
 <p><em>有插件就优先连插件</em></p>
-<p><img alt="Routine" src="https://upload.maynor1024.live/file/flavio-daily-routine.jpg" /></p>
+<p><img alt="Routine" src="assets/flavio-daily-routine.jpg" /></p>
 <p><em>Routine：日程、指令、Test run、历史</em></p>
-<p><img alt="交付" src="https://upload.maynor1024.live/file/flavio-blog-pulse-morning-report.jpg" /></p>
+<p><img alt="交付" src="assets/flavio-blog-pulse-morning-report.jpg" /></p>
 <p><em>好交付物：结构化、带源链接、查不到就明说</em></p>
 <hr />
 <h2 id="2">2. 它是什么、和谁不一样</h2>
@@ -324,7 +324,7 @@ a:hover{color:#fff; text-decoration:underline}
 <li><strong>多 Bot 可并行交接</strong>（仍共用一台电脑）  </li>
 <li><strong>可从 X tag <code>@bot</code> 派活</strong>（地区有限；结果在 App）</li>
 </ol>
-<p><img alt="桌面界面" src="https://upload.maynor1024.live/file/10-datacamp-app.png" /></p>
+<p><img alt="桌面界面" src="assets/10-datacamp-app.png" /></p>
 <p><em>桌面端对话界面示例（DataCamp 教程截图）</em></p>
 <hr />
 <h2 id="3">3. 怎么订阅与开通</h2>
@@ -385,7 +385,7 @@ a:hover{color:#fff; text-decoration:underline}
 <blockquote>
 <p>旧域名 <code>maynor.czvip.cn</code> 同路径在 2026-10-14 已无法打开有效商品详情；请用上面的 <strong>momoai</strong> 链接。</p>
 </blockquote>
-<p><img alt="订阅页" src="https://upload.maynor1024.live/file/13-momoai-buy-9.png" /></p>
+<p><img alt="订阅页" src="assets/13-momoai-buy-9.png" /></p>
 <p><em>发卡网购买页示意（截图可能仍显示旧价；下单以页面实时标价为准，当前为 ￥399）</em></p>
 <h4 id="_3">下单步骤（照着点）</h4>
 <ol>
@@ -504,7 +504,7 @@ a:hover{color:#fff; text-decoration:underline}
 </tbody>
 </table>
 <p>更 App ≠ 重置云电脑。</p>
-<p><img alt="官方 Get started" src="https://upload.maynor1024.live/file/02-get-started.png" /></p>
+<p><img alt="官方 Get started" src="assets/02-get-started.png" /></p>
 <hr />
 <h2 id="6">6. 核心概念</h2>
 <pre><code class="language-text">你（审批 / 2FA / 接管）
@@ -556,7 +556,7 @@ a:hover{color:#fff; text-decoration:underline}
 </tr>
 </tbody>
 </table>
-<p><img alt="官方 Overview" src="https://upload.maynor1024.live/file/01-overview.png" /></p>
+<p><img alt="官方 Overview" src="assets/01-overview.png" /></p>
 <hr />
 <h2 id="7-bot-profile">7. 创建 Bot 与写好 Profile</h2>
 <p>账号上限约：<strong>50 个 Bot + 群聊合计</strong>。</p>
@@ -601,7 +601,7 @@ a:hover{color:#fff; text-decoration:underline}
 <li><strong>Delete</strong>：删对话与其 Routine；<strong>共享电脑上的文件与登录可能仍在</strong>  </li>
 </ul>
 <p>侧栏常见删除：右键 Bot → Delete。</p>
-<p><img alt="官方 Bots" src="https://upload.maynor1024.live/file/04-bots.png" /></p>
+<p><img alt="官方 Bots" src="assets/04-bots.png" /></p>
 <hr />
 <h2 id="8">8. 怎么下任务</h2>
 <h3 id="_14">五要素（官方建议）</h3>
@@ -629,7 +629,7 @@ a:hover{color:#fff; text-decoration:underline}
 <p>账号下所有 Bot <strong>共用一台云电脑</strong>：Cookie、<code>/workspace</code>、CLI 凭证都共享。<br />
 <strong>不要把「多个 Bot」当成安全边界。</strong></p>
 <p>每个 Bot 有独立屏幕，可并行操作；但<strong>同一 Bot 同时只能跑一个 computer-use</strong>。屏幕隔离 ≠ 安全隔离。</p>
-<p><img alt="官方 Computer" src="https://upload.maynor1024.live/file/03-computer-and-apps.png" /></p>
+<p><img alt="官方 Computer" src="assets/03-computer-and-apps.png" /></p>
 <h3 id="_19">观看与接管</h3>
 <ul>
 <li>打开 Computer 看实时操作  </li>
@@ -657,7 +657,7 @@ a:hover{color:#fff; text-decoration:underline}
 <p><strong>读 X 不必先连账号：</strong> Bot 可只读搜索公开帖、账号发帖、引用 / 转发、话题计数与趋势；私信、书签、主页时间线等需装 <strong>X plugin</strong> 并登录。</p>
 <p>事件触发（Slack / GitHub 等）可能走 <strong>Cursor 账号集成</strong>，与 Plugins 里的同名插件不一定是同一条连接——以客户端提示为准。监听规则要窄。</p>
 <p>实操：只连当前工作流需要的；能只读就先只读；定期审查；不用了就卸插件并在源服务 revoke。</p>
-<p><img alt="授权流实录" src="https://upload.maynor1024.live/file/01-grok-build-auth.png" /></p>
+<p><img alt="授权流实录" src="assets/01-grok-build-auth.png" /></p>
 <p><em>云电脑授权流：用户通常只需点「允许」</em></p>
 <hr />
 <h2 id="11">11. 文件与交付物</h2>
@@ -681,7 +681,7 @@ a:hover{color:#fff; text-decoration:underline}
 <strong>会变的事实</strong>放 <code>/workspace</code> 文件，不要只塞进「记忆」。</p>
 <hr />
 <h2 id="12-skill-teach-routine">12. Skill · Teach · Routine</h2>
-<p><img alt="官方 Skills &amp; Routines" src="https://upload.maynor1024.live/file/05-skills-routines.png" /></p>
+<p><img alt="官方 Skills &amp; Routines" src="assets/05-skills-routines.png" /></p>
 <h3 id="skill-vs-routine">Skill vs Routine</h3>
 <table>
 <thead>
@@ -737,7 +737,7 @@ a:hover{color:#fff; text-decoration:underline}
 <p>管理：Bot → <strong>View conversation details</strong> → <strong>Routines</strong><br />
 上限：每 Bot 约 <strong>50</strong> 条；每条保留约 <strong>20</strong> 次历史；日程间隔至少约 <strong>5 分钟</strong>。删除不可撤销。<br />
 <strong>隐藏 Bot 不会停 Routine。</strong> 长时间未打开 App 时，产品可能询问是否继续跑 Routine，无应答则暂停。</p>
-<p><img alt="Routine DataCamp" src="https://upload.maynor1024.live/file/12-datacamp-routine.png" /></p>
+<p><img alt="Routine DataCamp" src="assets/12-datacamp-routine.png" /></p>
 <p><strong>Test run 会做真事</strong>——用安全输入，写操作仍放审批后。</p>
 <p>可信清单：</p>
 <ul>
@@ -746,11 +746,11 @@ a:hover{color:#fff; text-decoration:underline}
 <li>[ ] 无数据 / 过期数据策略写死  </li>
 <li>[ ] 源系统变更后重测  </li>
 </ul>
-<p><img alt="交接实录" src="https://upload.maynor1024.live/file/02-handover.png" /></p>
+<p><img alt="交接实录" src="assets/02-handover.png" /></p>
 <p><em>好的交接：先摸结构，再主动说明缺什么权限</em></p>
 <hr />
 <h2 id="13">13. 审批与安全</h2>
-<p><img alt="官方 Approvals" src="https://upload.maynor1024.live/file/06-approvals-security.png" /></p>
+<p><img alt="官方 Approvals" src="assets/06-approvals-security.png" /></p>
 <h3 id="_24">在请求里设边界</h3>
 <blockquote>
 <p>Reconcile campaign data and draft a budget change. Do not change the campaign or message the agency. Ask for approval after showing current vs proposed vs expected impact.</p>
@@ -790,12 +790,12 @@ a:hover{color:#fff; text-decoration:underline}
 对方得到<strong>配置副本</strong>，得不到你的电脑、登录、聊天。<br />
 侧栏 <strong>Marketplace</strong> 也可导入别人的 Bot 模板。<br />
 分享前去掉密钥、内网 URL、客户数据。</p>
-<p><img alt="运营实录" src="https://upload.maynor1024.live/file/03-keys-and-meetup.png" /></p>
-<p><img alt="对外投稿" src="https://upload.maynor1024.live/file/04-small-site-promo.png" /></p>
+<p><img alt="运营实录" src="assets/03-keys-and-meetup.png" /></p>
+<p><img alt="对外投稿" src="assets/04-small-site-promo.png" /></p>
 <hr />
 <h2 id="15-prompt">15. 场景 Prompt 模板</h2>
 <p>来源：<a href="https://docs.x.ai/grok-bot/use-cases">官方 Use cases</a>。套路一律：<strong>只读准备 → 你审查 → 再加批准动作 / Routine</strong>。</p>
-<p><img alt="官方 Use cases" src="https://upload.maynor1024.live/file/07-use-cases.png" /></p>
+<p><img alt="官方 Use cases" src="assets/07-use-cases.png" /></p>
 <p><strong>Sales Outbound</strong>  </p>
 <blockquote>
 <p>Research the 25 accounts in this CRM view. Score vs ICP and intent, find up to 3 contacts each, draft email/LinkedIn in the attached style. Skip active sequences. <strong>Return a review list; do not send or enroll.</strong></p>
@@ -903,7 +903,7 @@ a:hover{color:#fff; text-decoration:underline}
 </table>
 <p>单 Bot 信息：点聊天标题里的名字（或 <code>Cmd+Shift+I</code>）。</p>
 <h3 id="_30">排错（先做破坏性最小的）</h3>
-<p><img alt="官方 Troubleshooting" src="https://upload.maynor1024.live/file/08-troubleshooting.png" /></p>
+<p><img alt="官方 Troubleshooting" src="assets/08-troubleshooting.png" /></p>
 <p><strong>登录失败</strong><br />
 保持 App 打开 → 确认浏览器登录成功 → 手动切回 → 再试 → 查资格 / Legacy Privacy Mode。</p>
 <p><strong>电脑一直 Starting</strong><br />
@@ -972,126 +972,126 @@ Teach a task 可用时可以（约 10 分钟上限）。</p>
 <li><a href="https://github.com/RongleCat/awesome-grok-bot">awesome-grok-bot</a>  </li>
 </ul>
 <p>资格、Linux/Android、价格等处，社区与文档可能短暂不一致——<strong>以官方与账号内显示为准</strong>。</p>
-<h3 id="_33">图床链接清单</h3>
+<h3 id="_33">本地截图清单</h3>
 <table>
 <thead>
 <tr>
 <th>文件</th>
-<th>URL</th>
+<th>仓库路径</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>grok-bot-guide-cover-2026.png</td>
-<td>https://upload.maynor1024.live/file/grok-bot-guide-cover-2026.png</td>
+<td>assets/grok-bot-guide-cover-2026.png</td>
 </tr>
 <tr>
 <td>flavio-product-page.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-product-page.jpg</td>
+<td>assets/flavio-product-page.jpg</td>
 </tr>
 <tr>
 <td>flavio-sign-in-screen.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-sign-in-screen.jpg</td>
+<td>assets/flavio-sign-in-screen.jpg</td>
 </tr>
 <tr>
 <td>flavio-account-authorization.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-account-authorization.jpg</td>
+<td>assets/flavio-account-authorization.jpg</td>
 </tr>
 <tr>
 <td>flavio-macos-installer.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-macos-installer.jpg</td>
+<td>assets/flavio-macos-installer.jpg</td>
 </tr>
 <tr>
 <td>flavio-create-first-bot.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-create-first-bot.jpg</td>
+<td>assets/flavio-create-first-bot.jpg</td>
 </tr>
 <tr>
 <td>flavio-blog-pulse-role.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-blog-pulse-role.jpg</td>
+<td>assets/flavio-blog-pulse-role.jpg</td>
 </tr>
 <tr>
 <td>flavio-blog-pulse-first-run.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg</td>
+<td>assets/flavio-blog-pulse-first-run.jpg</td>
 </tr>
 <tr>
 <td>flavio-plugins.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-plugins.jpg</td>
+<td>assets/flavio-plugins.jpg</td>
 </tr>
 <tr>
 <td>flavio-daily-routine.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-daily-routine.jpg</td>
+<td>assets/flavio-daily-routine.jpg</td>
 </tr>
 <tr>
 <td>flavio-blog-pulse-morning-report.jpg</td>
-<td>https://upload.maynor1024.live/file/flavio-blog-pulse-morning-report.jpg</td>
+<td>assets/flavio-blog-pulse-morning-report.jpg</td>
 </tr>
 <tr>
 <td>01-overview.png</td>
-<td>https://upload.maynor1024.live/file/01-overview.png</td>
+<td>assets/01-overview.png</td>
 </tr>
 <tr>
 <td>02-get-started.png</td>
-<td>https://upload.maynor1024.live/file/02-get-started.png</td>
+<td>assets/02-get-started.png</td>
 </tr>
 <tr>
 <td>03-computer-and-apps.png</td>
-<td>https://upload.maynor1024.live/file/03-computer-and-apps.png</td>
+<td>assets/03-computer-and-apps.png</td>
 </tr>
 <tr>
 <td>04-bots.png</td>
-<td>https://upload.maynor1024.live/file/04-bots.png</td>
+<td>assets/04-bots.png</td>
 </tr>
 <tr>
 <td>05-skills-routines.png</td>
-<td>https://upload.maynor1024.live/file/05-skills-routines.png</td>
+<td>assets/05-skills-routines.png</td>
 </tr>
 <tr>
 <td>06-approvals-security.png</td>
-<td>https://upload.maynor1024.live/file/06-approvals-security.png</td>
+<td>assets/06-approvals-security.png</td>
 </tr>
 <tr>
 <td>07-use-cases.png</td>
-<td>https://upload.maynor1024.live/file/07-use-cases.png</td>
+<td>assets/07-use-cases.png</td>
 </tr>
 <tr>
 <td>08-troubleshooting.png</td>
-<td>https://upload.maynor1024.live/file/08-troubleshooting.png</td>
+<td>assets/08-troubleshooting.png</td>
 </tr>
 <tr>
 <td>09-product-page.png</td>
-<td>https://upload.maynor1024.live/file/09-product-page.png</td>
+<td>assets/09-product-page.png</td>
 </tr>
 <tr>
 <td>10-datacamp-app.png</td>
-<td>https://upload.maynor1024.live/file/10-datacamp-app.png</td>
+<td>assets/10-datacamp-app.png</td>
 </tr>
 <tr>
 <td>11-datacamp-agent-computer.png</td>
-<td>https://upload.maynor1024.live/file/11-datacamp-agent-computer.png</td>
+<td>assets/11-datacamp-agent-computer.png</td>
 </tr>
 <tr>
 <td>12-datacamp-routine.png</td>
-<td>https://upload.maynor1024.live/file/12-datacamp-routine.png</td>
+<td>assets/12-datacamp-routine.png</td>
 </tr>
 <tr>
 <td>01-grok-build-auth.png</td>
-<td>https://upload.maynor1024.live/file/01-grok-build-auth.png</td>
+<td>assets/01-grok-build-auth.png</td>
 </tr>
 <tr>
 <td>02-handover.png</td>
-<td>https://upload.maynor1024.live/file/02-handover.png</td>
+<td>assets/02-handover.png</td>
 </tr>
 <tr>
 <td>03-keys-and-meetup.png</td>
-<td>https://upload.maynor1024.live/file/03-keys-and-meetup.png</td>
+<td>assets/03-keys-and-meetup.png</td>
 </tr>
 <tr>
 <td>04-small-site-promo.png</td>
-<td>https://upload.maynor1024.live/file/04-small-site-promo.png</td>
+<td>assets/04-small-site-promo.png</td>
 </tr>
 <tr>
 <td>13-momoai-buy-9.png</td>
-<td>https://upload.maynor1024.live/file/13-momoai-buy-9.png</td>
+<td>assets/13-momoai-buy-9.png</td>
 </tr>
 </tbody>
 </table>

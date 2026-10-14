@@ -5,11 +5,11 @@
 > 更新日期：2026-10-14  
 > 适用：想从 0 把 Grok Bot 用到「能定时交作业」的人  
 > 依据优先：[官方文档 docs.x.ai/grok-bot](https://docs.x.ai/grok-bot/overview)；资格与价格以 [x.ai/bot](https://x.ai/bot) / App 内账单为准  
-> 截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；已托管于 `upload.maynor1024.live`
+> 截图来源：Flavio Copes 实机教程、awesome-grok-bot 公开实录、官方文档页；截图已收录于本仓库 `docs/assets/`
 
 ---
 
-![封面](https://upload.maynor1024.live/file/grok-bot-guide-cover-2026.png)
+![封面](docs/assets/grok-bot-guide-cover-2026.png)
 
 ---
 
@@ -71,21 +71,21 @@
 
 从 [x.ai/bot](https://x.ai/bot) 下载桌面端（macOS / Windows / Linux），用 **Cursor 账号**登录。组织账号走 SSO。
 
-![产品页](https://upload.maynor1024.live/file/flavio-product-page.jpg)
+![产品页](docs/assets/flavio-product-page.jpg)
 
 *产品 / 下载入口*
 
-![登录](https://upload.maynor1024.live/file/flavio-sign-in-screen.jpg)
+![登录](docs/assets/flavio-sign-in-screen.jpg)
 
 *首屏：Sign in with Cursor*
 
-![授权](https://upload.maynor1024.live/file/flavio-account-authorization.jpg)
+![授权](docs/assets/flavio-account-authorization.jpg)
 
 *浏览器里确认授权的那个账号*
 
 macOS：打开 dmg，拖进 Applications。
 
-![安装](https://upload.maynor1024.live/file/flavio-macos-installer.jpg)
+![安装](docs/assets/flavio-macos-installer.jpg)
 
 ### Step 2 · 只建一个窄职责 Bot
 
@@ -95,9 +95,9 @@ macOS：打开 dmg，拖进 Applications。
 - **Title**：一句话岗位  
 - **Description**：写清结果、来源、禁止事项、审批边界  
 
-![创建 Bot](https://upload.maynor1024.live/file/flavio-create-first-bot.jpg)
+![创建 Bot](docs/assets/flavio-create-first-bot.jpg)
 
-![Profile](https://upload.maynor1024.live/file/flavio-blog-pulse-role.jpg)
+![Profile](docs/assets/flavio-blog-pulse-role.jpg)
 
 *把「怎么干」写进描述，把「本周干什么」留给消息*
 
@@ -111,14 +111,14 @@ macOS：打开 dmg，拖进 Applications。
 
 桌面也可用听写（`Cmd/Ctrl+D`）或语音对话。先要**草稿 / 审查清单**，不要一上来就让它外发。
 
-![首次跑通](https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg)
+![首次跑通](docs/assets/flavio-blog-pulse-first-run.jpg)
 
 ### Step 4 · 需要登录时接管电脑
 
 对话里打开 **Computer**（界面或仍写 Agent Computer）→ Take over → 自己完成密码 / 2FA / CAPTCHA → I'm done 交还。  
 **密码不要贴进聊天。**
 
-![Agent Computer](https://upload.maynor1024.live/file/11-datacamp-agent-computer.png)
+![Agent Computer](docs/assets/11-datacamp-agent-computer.png)
 
 *Agent Computer：看它在点什么、卡在哪*
 
@@ -126,15 +126,15 @@ macOS：打开 dmg，拖进 Applications。
 
 手动结果满意 → 让它存 Skill → `/` 再测一次 → 建 Routine → **先 Test run 盯完整场** → 再启用定时。
 
-![Plugins](https://upload.maynor1024.live/file/flavio-plugins.jpg)
+![Plugins](docs/assets/flavio-plugins.jpg)
 
 *有插件就优先连插件*
 
-![Routine](https://upload.maynor1024.live/file/flavio-daily-routine.jpg)
+![Routine](docs/assets/flavio-daily-routine.jpg)
 
 *Routine：日程、指令、Test run、历史*
 
-![交付](https://upload.maynor1024.live/file/flavio-blog-pulse-morning-report.jpg)
+![交付](docs/assets/flavio-blog-pulse-morning-report.jpg)
 
 *好交付物：结构化、带源链接、查不到就明说*
 
@@ -154,7 +154,7 @@ macOS：打开 dmg，拖进 Applications。
 6. **多 Bot 可并行交接**（仍共用一台电脑）  
 7. **可从 X tag `@bot` 派活**（地区有限；结果在 App）
 
-![桌面界面](https://upload.maynor1024.live/file/10-datacamp-app.png)
+![桌面界面](docs/assets/10-datacamp-app.png)
 
 *桌面端对话界面示例（DataCamp 教程截图）*
 
@@ -198,7 +198,7 @@ Grok Bot 本身挂在 **Cursor / SuperGrok** 资格上。国内常见有两条�
 
 > 旧域名 `maynor.czvip.cn` 同路径在 2026-10-14 已无法打开有效商品详情；请用上面的 **momoai** 链接。
 
-![订阅页](https://upload.maynor1024.live/file/13-momoai-buy-9.png)
+![订阅页](docs/assets/13-momoai-buy-9.png)
 
 *发卡网购买页示意（截图可能仍显示旧价；下单以页面实时标价为准，当前为 ￥399）*
 
@@ -295,7 +295,7 @@ Grok Bot **需要云端数据存储**。Cursor 若仍是 **Legacy Privacy Mode**
 
 更 App ≠ 重置云电脑。
 
-![官方 Get started](https://upload.maynor1024.live/file/02-get-started.png)
+![官方 Get started](docs/assets/02-get-started.png)
 
 ---
 
@@ -324,7 +324,7 @@ Grok Bot **需要云端数据存储**。Cursor 若仍是 **Legacy Privacy Mode**
 | Auto Review | 自动审查；可 Ask first / Allow automatically |
 | Teach a task | 演示一遍生成 Skill 草稿（约 ≤10 分钟） |
 
-![官方 Overview](https://upload.maynor1024.live/file/01-overview.png)
+![官方 Overview](docs/assets/01-overview.png)
 
 ---
 
@@ -365,7 +365,7 @@ Grok Bot **需要云端数据存储**。Cursor 若仍是 **Legacy Privacy Mode**
 
 侧栏常见删除：右键 Bot → Delete。
 
-![官方 Bots](https://upload.maynor1024.live/file/04-bots.png)
+![官方 Bots](docs/assets/04-bots.png)
 
 ---
 
@@ -403,7 +403,7 @@ Outcome · Sources · Constraints · Deliverable · Review point
 
 每个 Bot 有独立屏幕，可并行操作；但**同一 Bot 同时只能跑一个 computer-use**。屏幕隔离 ≠ 安全隔离。
 
-![官方 Computer](https://upload.maynor1024.live/file/03-computer-and-apps.png)
+![官方 Computer](docs/assets/03-computer-and-apps.png)
 
 ### 观看与接管
 
@@ -440,7 +440,7 @@ Connector **账号级共享**，不是某个 Bot 私有。
 
 实操：只连当前工作流需要的；能只读就先只读；定期审查；不用了就卸插件并在源服务 revoke。
 
-![授权流实录](https://upload.maynor1024.live/file/01-grok-build-auth.png)
+![授权流实录](docs/assets/01-grok-build-auth.png)
 
 *云电脑授权流：用户通常只需点「允许」*
 
@@ -473,7 +473,7 @@ Connector **账号级共享**，不是某个 Bot 私有。
 
 ## 12. Skill · Teach · Routine
 
-![官方 Skills & Routines](https://upload.maynor1024.live/file/05-skills-routines.png)
+![官方 Skills & Routines](docs/assets/05-skills-routines.png)
 
 ### Skill vs Routine
 
@@ -517,7 +517,7 @@ Connector **账号级共享**，不是某个 Bot 私有。
 上限：每 Bot 约 **50** 条；每条保留约 **20** 次历史；日程间隔至少约 **5 分钟**。删除不可撤销。  
 **隐藏 Bot 不会停 Routine。** 长时间未打开 App 时，产品可能询问是否继续跑 Routine，无应答则暂停。
 
-![Routine DataCamp](https://upload.maynor1024.live/file/12-datacamp-routine.png)
+![Routine DataCamp](docs/assets/12-datacamp-routine.png)
 
 **Test run 会做真事**——用安全输入，写操作仍放审批后。
 
@@ -528,7 +528,7 @@ Connector **账号级共享**，不是某个 Bot 私有。
 - [ ] 无数据 / 过期数据策略写死  
 - [ ] 源系统变更后重测  
 
-![交接实录](https://upload.maynor1024.live/file/02-handover.png)
+![交接实录](docs/assets/02-handover.png)
 
 *好的交接：先摸结构，再主动说明缺什么权限*
 
@@ -536,7 +536,7 @@ Connector **账号级共享**，不是某个 Bot 私有。
 
 ## 13. 审批与安全
 
-![官方 Approvals](https://upload.maynor1024.live/file/06-approvals-security.png)
+![官方 Approvals](docs/assets/06-approvals-security.png)
 
 ### 在请求里设边界
 
@@ -586,9 +586,9 @@ Share → **Create template** → Copy link（Public 或 Team-only）→ 对方�
 侧栏 **Marketplace** 也可导入别人的 Bot 模板。  
 分享前去掉密钥、内网 URL、客户数据。
 
-![运营实录](https://upload.maynor1024.live/file/03-keys-and-meetup.png)
+![运营实录](docs/assets/03-keys-and-meetup.png)
 
-![对外投稿](https://upload.maynor1024.live/file/04-small-site-promo.png)
+![对外投稿](docs/assets/04-small-site-promo.png)
 
 ---
 
@@ -596,7 +596,7 @@ Share → **Create template** → Copy link（Public 或 Team-only）→ 对方�
 
 来源：[官方 Use cases](https://docs.x.ai/grok-bot/use-cases)。套路一律：**只读准备 → 你审查 → 再加批准动作 / Routine**。
 
-![官方 Use cases](https://upload.maynor1024.live/file/07-use-cases.png)
+![官方 Use cases](docs/assets/07-use-cases.png)
 
 **Sales Outbound**  
 > Research the 25 accounts in this CRM view. Score vs ICP and intent, find up to 3 contacts each, draft email/LinkedIn in the attached style. Skip active sequences. **Return a review list; do not send or enroll.**
@@ -668,7 +668,7 @@ Share → **Create template** → Copy link（Public 或 Team-only）→ 对方�
 
 ### 排错（先做破坏性最小的）
 
-![官方 Troubleshooting](https://upload.maynor1024.live/file/08-troubleshooting.png)
+![官方 Troubleshooting](docs/assets/08-troubleshooting.png)
 
 **登录失败**  
 保持 App 打开 → 确认浏览器登录成功 → 手动切回 → 再试 → 查资格 / Legacy Privacy Mode。
@@ -764,38 +764,38 @@ Teach a task 可用时可以（约 10 分钟上限）。
 
 资格、Linux/Android、价格等处，社区与文档可能短暂不一致——**以官方与账号内显示为准**。
 
-### 图床链接清单
+### 本地截图清单
 
-| 文件 | URL |
-|------|-----|
-| grok-bot-guide-cover-2026.png | https://upload.maynor1024.live/file/grok-bot-guide-cover-2026.png |
-| flavio-product-page.jpg | https://upload.maynor1024.live/file/flavio-product-page.jpg |
-| flavio-sign-in-screen.jpg | https://upload.maynor1024.live/file/flavio-sign-in-screen.jpg |
-| flavio-account-authorization.jpg | https://upload.maynor1024.live/file/flavio-account-authorization.jpg |
-| flavio-macos-installer.jpg | https://upload.maynor1024.live/file/flavio-macos-installer.jpg |
-| flavio-create-first-bot.jpg | https://upload.maynor1024.live/file/flavio-create-first-bot.jpg |
-| flavio-blog-pulse-role.jpg | https://upload.maynor1024.live/file/flavio-blog-pulse-role.jpg |
-| flavio-blog-pulse-first-run.jpg | https://upload.maynor1024.live/file/flavio-blog-pulse-first-run.jpg |
-| flavio-plugins.jpg | https://upload.maynor1024.live/file/flavio-plugins.jpg |
-| flavio-daily-routine.jpg | https://upload.maynor1024.live/file/flavio-daily-routine.jpg |
-| flavio-blog-pulse-morning-report.jpg | https://upload.maynor1024.live/file/flavio-blog-pulse-morning-report.jpg |
-| 01-overview.png | https://upload.maynor1024.live/file/01-overview.png |
-| 02-get-started.png | https://upload.maynor1024.live/file/02-get-started.png |
-| 03-computer-and-apps.png | https://upload.maynor1024.live/file/03-computer-and-apps.png |
-| 04-bots.png | https://upload.maynor1024.live/file/04-bots.png |
-| 05-skills-routines.png | https://upload.maynor1024.live/file/05-skills-routines.png |
-| 06-approvals-security.png | https://upload.maynor1024.live/file/06-approvals-security.png |
-| 07-use-cases.png | https://upload.maynor1024.live/file/07-use-cases.png |
-| 08-troubleshooting.png | https://upload.maynor1024.live/file/08-troubleshooting.png |
-| 09-product-page.png | https://upload.maynor1024.live/file/09-product-page.png |
-| 10-datacamp-app.png | https://upload.maynor1024.live/file/10-datacamp-app.png |
-| 11-datacamp-agent-computer.png | https://upload.maynor1024.live/file/11-datacamp-agent-computer.png |
-| 12-datacamp-routine.png | https://upload.maynor1024.live/file/12-datacamp-routine.png |
-| 01-grok-build-auth.png | https://upload.maynor1024.live/file/01-grok-build-auth.png |
-| 02-handover.png | https://upload.maynor1024.live/file/02-handover.png |
-| 03-keys-and-meetup.png | https://upload.maynor1024.live/file/03-keys-and-meetup.png |
-| 04-small-site-promo.png | https://upload.maynor1024.live/file/04-small-site-promo.png |
-| 13-momoai-buy-9.png | https://upload.maynor1024.live/file/13-momoai-buy-9.png |
+| 文件 | 仓库路径 |
+|------|----------|
+| grok-bot-guide-cover-2026.png | docs/assets/grok-bot-guide-cover-2026.png |
+| flavio-product-page.jpg | docs/assets/flavio-product-page.jpg |
+| flavio-sign-in-screen.jpg | docs/assets/flavio-sign-in-screen.jpg |
+| flavio-account-authorization.jpg | docs/assets/flavio-account-authorization.jpg |
+| flavio-macos-installer.jpg | docs/assets/flavio-macos-installer.jpg |
+| flavio-create-first-bot.jpg | docs/assets/flavio-create-first-bot.jpg |
+| flavio-blog-pulse-role.jpg | docs/assets/flavio-blog-pulse-role.jpg |
+| flavio-blog-pulse-first-run.jpg | docs/assets/flavio-blog-pulse-first-run.jpg |
+| flavio-plugins.jpg | docs/assets/flavio-plugins.jpg |
+| flavio-daily-routine.jpg | docs/assets/flavio-daily-routine.jpg |
+| flavio-blog-pulse-morning-report.jpg | docs/assets/flavio-blog-pulse-morning-report.jpg |
+| 01-overview.png | docs/assets/01-overview.png |
+| 02-get-started.png | docs/assets/02-get-started.png |
+| 03-computer-and-apps.png | docs/assets/03-computer-and-apps.png |
+| 04-bots.png | docs/assets/04-bots.png |
+| 05-skills-routines.png | docs/assets/05-skills-routines.png |
+| 06-approvals-security.png | docs/assets/06-approvals-security.png |
+| 07-use-cases.png | docs/assets/07-use-cases.png |
+| 08-troubleshooting.png | docs/assets/08-troubleshooting.png |
+| 09-product-page.png | docs/assets/09-product-page.png |
+| 10-datacamp-app.png | docs/assets/10-datacamp-app.png |
+| 11-datacamp-agent-computer.png | docs/assets/11-datacamp-agent-computer.png |
+| 12-datacamp-routine.png | docs/assets/12-datacamp-routine.png |
+| 01-grok-build-auth.png | docs/assets/01-grok-build-auth.png |
+| 02-handover.png | docs/assets/02-handover.png |
+| 03-keys-and-meetup.png | docs/assets/03-keys-and-meetup.png |
+| 04-small-site-promo.png | docs/assets/04-small-site-promo.png |
+| 13-momoai-buy-9.png | docs/assets/13-momoai-buy-9.png |
 
 ---
 
