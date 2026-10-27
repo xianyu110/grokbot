@@ -757,6 +757,7 @@ Teach a task 可用时可以（约 10 分钟上限）。
 ### 社区精选
 
 - [Flavio Copes 深潜](https://flaviocopes.com/grok-bot/)  
+- [grokguide.si 中文实测教程](https://grokguide.si) — 非官方中文站：Linux/rpm 安装纠错、多 Bot 规则底座、Routine 提案对照；站方自荐
 - [DataCamp：Skill / Routine / Approvals](https://www.datacamp.com/tutorial/grok-bot-tutorial)  
 - [electrify.tw 中文总览](https://electrify.tw/what-is-grok-bot/)  
 - [橙皮书 × Awesome 手册](https://grokbot.aihuangshu.com/)  
