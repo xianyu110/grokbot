@@ -24,7 +24,7 @@
 | Grok Build | 写代码的 CLI / coding agent |
 | **Grok Bot** | **有电脑的 AI 同事**：登录、操作、定时、协作 |
 
-**还没开通？** 人民币下单见 [第 3 章 · 怎么订阅与开通](#3-怎么订阅与开通)（购买页：https://wzyp.cn/shop/maynorai/gyx7gn ，Grok Bot 月卡 ￥399）。
+**还没开通？** 人民币下单见 [第 3 章 · 怎么订阅与开通](#3-怎么订阅与开通)（购买页：https://chongzhi.chatgpt-plus.top/grok/ ，Grok Bot 月卡 ￥399）。
 
 **最稳的用法只有一条链：**
 
@@ -177,7 +177,7 @@ Grok Bot 本身挂在 **Cursor / SuperGrok** 资格上。国内常见有两条�
 
 人民币下单走本教程对接页（2026-10-14 复核仍可下单）：
 
-**购买链接：<https://wzyp.cn/shop/maynorai/gyx7gn>**
+**购买链接：<https://chongzhi.chatgpt-plus.top/grok/>**
 
 | 项目 | 页面信息（2026-10-14 实测） |
 |------|------------------------------|
@@ -204,7 +204,7 @@ Grok Bot 本身挂在 **Cursor / SuperGrok** 资格上。国内常见有两条�
 
 #### 下单步骤（照着点）
 
-1. 打开 https://wzyp.cn/shop/maynorai/gyx7gn  
+1. 打开 https://chongzhi.chatgpt-plus.top/grok/  
 2. 确认标题含「Grok Bot」、价格为 **￥399**（若页面改价，以页面为准）  
 3. 填写**常用邮箱**（收货 / 查单）  
 4. 购买数量一般填 `1`  
@@ -699,7 +699,7 @@ Plugins 页重认证 → 对账号授权 → 组织变量是否缺失 → revoke
 
 
 **怎么用人民币订阅？**  
-见 [第 3 章](#3-怎么订阅与开通)。购买页：https://wzyp.cn/shop/maynorai/gyx7gn （Grok Bot 月卡 ￥399；以页面实时标价为准）。
+见 [第 3 章](#3-怎么订阅与开通)。购买页：https://chongzhi.chatgpt-plus.top/grok/ （Grok Bot 月卡 ￥399；以页面实时标价为准）。
 
 
 **关电脑还能干活吗？**  
